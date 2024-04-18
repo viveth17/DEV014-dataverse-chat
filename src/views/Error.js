@@ -7,7 +7,7 @@ export function Error() {
   </header>
   <main>
     <div id="root"></div>
-    <p> page not found </p>
+    <p> page not found!!! </p>
   </main>
   <footer>
     <p class="p">
