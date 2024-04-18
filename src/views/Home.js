@@ -87,6 +87,7 @@ export function Home(props) {
 </footer> 
 `
 
+
   //   // // se agrega la funcionalidad de filtrado, ordenamiento y promedio
   const divElement = viewEl.childNodes[3];
   console.log('divElement',divElement);
