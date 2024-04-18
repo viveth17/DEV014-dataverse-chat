@@ -1,5 +1,18 @@
 export function Detail() {
     const viewEl = document.createElement('div');
-    viewEl.textContent = 'This is the About page.';
+    viewEl.innerHTML = `
+    <header>
+    <h1>SharkInfo</h1>
+    <h2>Sumérgete en el mundo de los tiburones</h2>
+  </header>
+  <main>
+    <div id="root"></div>
+  </main>
+  <footer>
+    <p class="p">
+      Hecho por Mireilys e Iveth</p>
+  </footer> 
+  `
+  
     return viewEl;
   }

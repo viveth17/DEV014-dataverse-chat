@@ -41,7 +41,8 @@ const queryStringToObject = (queryString) => {
 
 const renderView = (pathname, props={}) => {
 
-  let view = ROUTES[pathname];
+  let view = ROUTES[pathname] ;
+
   console.log('view:', view); 
 
   rootEl.appendChild(view)

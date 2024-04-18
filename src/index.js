@@ -28,6 +28,7 @@ import { Home } from './views/Home.js'; /// Home ---> { Home }
 import { Detail } from './views/Detail.js';
 import { IndividualChat } from './views/IndividualChat.js';
 import { GroupChat } from './views/GroupChat.js';
+import { Error } from './views/Error.js';
 // ... import other views
 import { setRootEl, setRoutes, onURLChange} from './router.js';
 
@@ -36,7 +37,8 @@ const routes = {
   '/': Home(),
   '/detail': Detail(),
   '/individualchat': IndividualChat (),
-  '/groupchat': GroupChat ()
+  '/groupchat': GroupChat (),
+  '/error': Error ()
   // ...
 };
 
