@@ -23,6 +23,7 @@ img {
     color: black;
     margin: 10px;
     list-style-type: none;
+    border-radius: 5px;
 }
 
 p {
@@ -65,6 +66,7 @@ header {
     background-repeat: no-repeat;
     color: #FFFFFF;
     padding: 10px;
+    height: 90px;
     text-align: center;
 
 }
@@ -88,15 +90,21 @@ footer {
 h1 {
     font-family: 'Inter', sans-serif;
     font-weight: 800;
-    font-size: 50px;
+    font-size: 30px;
+    margin: 15px 0 10px;
 }
 
 h2 {
     font-family: 'Inter', sans-serif;
     font-weight: 800;
-    font-size: 20px;
+    font-size: 15px;
+    margin: 0;
 }
-
+.actionsContainer{
+    display: flex;
+    gap: 4px;
+    place-items: center;
+}
 .p {
     background-size: 0%;
     padding: 10px;
@@ -124,65 +132,154 @@ body {
 
 section {
     background: #F5EEDC;
-    padding: 1rem 0;
+    padding: 15px 10px;
     flex-direction: row;
     align-items: center;
     display: flex;
     flex-wrap: wrap;
+    gap: 4px 10px;
 }
 
 label {
     font-family: 'Inter', sans-serif;
     color: black;
-    font-size: small;
-    font-weight: 700;
-    margin-right: 3px;
+    font-size: 11px;
+    font-weight: 500;
     margin-left: 1px;
 }
 
 select {
-    padding: 0px;
+    padding: 4px 1px;
     display: inline-flex;
-    gap: 500px;
     text-align: justify;
     background-color: rgb(250, 249, 249);
-    border-radius: 5px;
-    font-size: x-small;
+    border-radius: 2px;
+    font-size: 10px;
     font-family: sans-serif;
+    border-color: #007bff;
+    font-weight: 600;
 }
 #clearFilter {
     padding: 5px;
     border-radius: 5px;
-    font-size: 8px;
+    font-size: 10px;
     font-family: sans-serif;
     font-weight: 700;
     color: #fff;
     background-color: #007bff;
     border-color: #007bff;
     margin-left: auto;
-    margin-right: 52px;
     cursor: pointer;
 }
 
 #longevityText {
     color: black;
     font-family: 'Inter', sans-serif;
-    font-size: x-small;
-    font-weight: 700;
+    font-size: 11px;
+    font-weight: 500;
     margin-left: 2px;
 }
 
 #longevityProm {
     padding: 5px;
+    border-radius: 4px;
+    font-family: sans-serif;
+    font-weight: 600;
+    color: #fff;
+    background-color: #007bff;
+    border-color: #007bff;
+    cursor: pointer;
+    font-size: 10px;
+}
+.apiKeyContainer{
+    display: flex;
+    flex-direction: column;
+}
+
+.apiKeyContainer > p{
+    margin: 0;
+    font-size: 8px;
+    text-align: center;
+    line-height: 0.8;
+    color: #266bb6;
+}
+
+#showApiKeyDialog{
+    fill: #007bff;
+    color: #2672c4;
+    width: 25px;
+    height: 25px;
+    place-self: start;
+}
+#closeApiKeyDialog{
+    border: 0;
+    background-color: transparent;
+    font-size: 25px;
+    font-weight: 700;
+    color: #000;
+    opacity: .5;
+    line-height: 1;
+    position: relative;
+    bottom: 10px;
+    left: 10px;
+}
+#apiKeyDialog{
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid rgba(0, 0, 0, .2);    
+    border-radius: 4px;
+}
+.dialogHeader{
+    display: flex;
+    justify-content: space-between;
+    place-items: center;
+    margin-bottom: 10px;
+}
+.dialogHeader > label{
+    font-size: 14px;
+    font-weight: 600;
+}
+.dialogBody{
+    display: flex;
+    flex-direction: column;
+    min-width: 300px;
+    gap: 1rem;
+}
+.dialogBody > input{
+    padding: 4px;
+    background-color: rgb(250, 249, 249);
+    border-radius: 3px;
+    font-size: 12px;
+    font-family: sans-serif;
+    font-weight: 500;
+    border: 1px solid #007bff;
+}
+.custom-button{
+    padding: 5px;
     border-radius: 5px;
+    font-size: 10px;
     font-family: sans-serif;
     font-weight: 700;
     color: #fff;
     background-color: #007bff;
     border-color: #007bff;
+    margin-left: auto;
     cursor: pointer;
-    font-size: 8px;
+    width: fit-content;
+    place-self: end;
 }
+#iconGroupChat{
+    width: 30px;
+    height: 30px;
+    margin-left: 309px;
+}
+#sharkSociety{
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 11px;
+    margin-left: 276px;
+}
+
+
 
 @media (min-width : 900px) {
     body {

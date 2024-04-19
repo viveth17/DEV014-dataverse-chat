@@ -52,4 +52,43 @@ window.addEventListener("DOMContentLoaded", () => {
   // invoke onURLChange 
   onURLChange(window.location)
   console.log( 'window', (window.location));
+// Agregando la funcionalidad de la ventana emergente
+const showApiKeyDialogButton = document.getElementById('showApiKeyDialog');
+const apiKeyDialog = document.getElementById('apiKeyDialog');
+//Muestra el dialogo al hacer click en la imagen de la llave
+showApiKeyDialogButton.addEventListener('click', () => {
+  if (apiKeyDialog) {
+    apiKeyDialog.showModal();
+  }
 });
+//cerrar el dialogo al hacer click en la "X"
+const closeApiKeyDialogButton = document.getElementById ('closeApiKeyDialog');
+if (closeApiKeyDialogButton){
+    closeApiKeyDialogButton.addEventListener('click', () => {
+if (apiKeyDialog){
+    apiKeyDialog.close();
+}
+    });
+}
+//Guardar la API KEY al hacer click en el botón de "Guardar API KEY"
+const guardarApiKeyButton = document.getElementById('guardarApiKeyButton');
+if (guardarApiKeyButton) {
+  guardarApiKeyButton.addEventListener('click', () => {
+    const apiKeyInput = document.getElementById('apiKeyInput');
+    const apiKey = apiKeyInput.value.trim(); // Obtener y limpiar el valor de la API KEY
+
+    // Implementar lógica para guardar y utilizar la API KEY aquí
+    console.log('API KEY ingresada:', apiKey);
+
+    // Limpiar el input después de guardar la API KEY
+    apiKeyInput.value = '';
+
+    // Cerrar el diálogo después de guardar la API KEY
+    if (apiKeyDialog) {
+      apiKeyDialog.close();
+    }
+  });
+}
+});
+
+
