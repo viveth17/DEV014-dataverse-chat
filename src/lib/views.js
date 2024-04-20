@@ -1,11 +1,11 @@
 export const renderItems = (data) => {
-    const ulElement = document.createElement('ul');
-    data.forEach(item => {
-      const liElement = document.createElement('li');
-      liElement.setAttribute("class", "card");
-      liElement.setAttribute("itemtype", item.nombreDeLaEspecie);
-      liElement.setAttribute("itemscope", "");
-      liElement.innerHTML = `
+  const ulElement = document.createElement('ul');
+  data.forEach(item => {
+    const liElement = document.createElement('li');
+    liElement.setAttribute("class", "card");
+    liElement.setAttribute("itemtype", item.nombreDeLaEspecie);
+    liElement.setAttribute("itemscope", "");
+    liElement.innerHTML = `
       <dl>
       <img src=${item.imageUrl} alt="sharks" />
       <div>
@@ -18,11 +18,11 @@ export const renderItems = (data) => {
       </dl>
     `
   
-      ulElement.appendChild(liElement);
+    ulElement.appendChild(liElement);
   
   
-    });
-    return ulElement;
+  });
+  return ulElement;
   
-  };
+};
   
