@@ -58,7 +58,7 @@ export function Home(props) {
   </div>
   <div class="dialogBody">
     <input type="text" id="apiKeyInput" placeholder="Pega tu API KEY aquí" />
-    <button class="custom-button">Guardar API KEY</button>
+    <button id="saveApiKeyButton" class="custom-button">Guardar API KEY</button>
   </div>
 </dialog>
   <div id="root"></div>

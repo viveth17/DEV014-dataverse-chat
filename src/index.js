@@ -27,6 +27,7 @@ import { GroupChat } from './views/GroupChat.js';
 import { Error } from './views/Error.js';
 // ... import other views
 import { setRootEl, setRoutes, onURLChange} from './router.js';
+import { setApiKey } from './lib/apiKey.js';
 //import { getApiKey, setApiKey } from './lib/apiKey';
 
 
@@ -69,12 +70,15 @@ window.addEventListener("DOMContentLoaded", () => {
     });
   }
   //Guardar la API KEY al hacer click en el botón de "Guardar API KEY"
-  const guardarApiKeyButton = document.getElementById('guardarApiKeyButton');
-  if (guardarApiKeyButton) {
-    guardarApiKeyButton.addEventListener('click', () => {
+  const saveApiKeyButton = document.getElementById('saveApiKeyButton');
+  if (saveApiKeyButton) {
+   
+    saveApiKeyButton.addEventListener('click', () => {
       const apiKeyInput = document.getElementById('apiKeyInput');
       const apiKey = apiKeyInput.value.trim(); // Obtener y limpiar el valor de la API KEY
       // Implementar lógica para guardar y utilizar la API KEY aquí
+     
+      setApiKey(apiKey);
       console.log('API KEY ingresada:', apiKey);
       // Limpiar el input después de guardar la API KEY
       apiKeyInput.value = '';

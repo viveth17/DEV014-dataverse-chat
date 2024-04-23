@@ -13,6 +13,7 @@ export const setApiKey = (key) => {
     console.log('API KEY guardada correctamente.');
   } else {
     // Manejar el caso de clave incorrecta
+    alert('Error: Clave API no válida.')
     console.error('Error: Clave API no válida.');
   }
 };
