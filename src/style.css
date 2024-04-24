@@ -8,27 +8,31 @@ ul {
 }
 
 img {
-    width: 70px;
-    height: 66px;
+    margin: 6px;
+    width: 114px;
+    height: 111px;
     border-radius: 5px;
     flex-basis: 70px;
+    box-shadow: 3px 3px 2px rgb(0 0 0 / 18%);
 }
 
+
 .card {
-    width: 300px;
-    height: 110px;
+    width: 357px;
+    height: 134px;
     background: #F5EEDC;
     font-family: Arial, Helvetica, sans-serif;
-    font-size: small;
+    font-size: 11px;
     color: black;
-    margin: 10px;
+    margin: 5px;
     list-style-type: none;
     border-radius: 5px;
+    box-shadow: 1px 3px 3px rgba(0, 0, 0, 0.5);
 }
 
 p {
     font-family: Arial, Helvetica, sans-serif;
-    font-size: xx-small;
+    font-size: 11px;
     color: black;
     text-align: left;
     margin: 0cap;
@@ -39,10 +43,11 @@ p {
 }
 
 h3 {
-    margin: 0 0 2px 0;
+    margin: 5px 0px 3px 0;
     margin-left: 10px;
-    font-size: 15px;
+    font-size: 14px;
     text-align: left;
+    color: #266bb6;
 }
 
 h4 {
@@ -56,6 +61,8 @@ h4 {
 dl {
     display: flex;
     flex-direction: row;
+    margin-top: 5px;
+
 }
 
 header {
@@ -100,11 +107,13 @@ h2 {
     font-size: 15px;
     margin: 0;
 }
-.actionsContainer{
+
+.actionsContainer {
     display: flex;
     gap: 4px;
     place-items: center;
 }
+
 .p {
     background-size: 0%;
     padding: 10px;
@@ -138,6 +147,7 @@ section {
     display: flex;
     flex-wrap: wrap;
     gap: 4px 10px;
+    box-shadow: 1px 0px 10px 0px #000000b0;
 }
 
 label {
@@ -159,6 +169,7 @@ select {
     border-color: #007bff;
     font-weight: 600;
 }
+
 #clearFilter {
     padding: 5px;
     border-radius: 5px;
@@ -191,12 +202,13 @@ select {
     cursor: pointer;
     font-size: 10px;
 }
-.apiKeyContainer{
+
+.apiKeyContainer {
     display: flex;
     flex-direction: column;
 }
 
-.apiKeyContainer > p{
+.apiKeyContainer>p {
     margin: 0;
     font-size: 8px;
     text-align: center;
@@ -204,14 +216,15 @@ select {
     color: #266bb6;
 }
 
-#showApiKeyDialog{
+#showApiKeyDialog {
     fill: #007bff;
     color: #2672c4;
     width: 25px;
     height: 25px;
     place-self: start;
 }
-#closeApiKeyDialog{
+
+#closeApiKeyDialog {
     border: 0;
     background-color: transparent;
     font-size: 25px;
@@ -223,29 +236,35 @@ select {
     bottom: 10px;
     left: 10px;
 }
-#apiKeyDialog{
+
+#apiKeyDialog {
     background-color: #fff;
     background-clip: padding-box;
-    border: 1px solid rgba(0, 0, 0, .2);    
+    border: 1px solid rgba(0, 0, 0, .2);
     border-radius: 4px;
+    box-shadow: 1px 0px 10px 0px #000;
 }
-.dialogHeader{
+
+.dialogHeader {
     display: flex;
     justify-content: space-between;
     place-items: center;
     margin-bottom: 10px;
 }
-.dialogHeader > label{
+
+.dialogHeader>label {
     font-size: 14px;
     font-weight: 600;
 }
-.dialogBody{
+
+.dialogBody {
     display: flex;
     flex-direction: column;
     min-width: 300px;
     gap: 1rem;
 }
-.dialogBody > input{
+
+.dialogBody>input {
     padding: 4px;
     background-color: rgb(250, 249, 249);
     border-radius: 3px;
@@ -254,7 +273,8 @@ select {
     font-weight: 500;
     border: 1px solid #007bff;
 }
-.custom-button{
+
+.custom-button {
     padding: 5px;
     border-radius: 5px;
     font-size: 10px;
@@ -268,18 +288,46 @@ select {
     width: fit-content;
     place-self: end;
 }
-#iconGroupChat{
+
+#iconGroupChat {
     width: 30px;
     height: 30px;
     margin-left: 309px;
 }
-#sharkSociety{
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-    font-size: 11px;
-    margin-left: 276px;
+
+#iconChatGroup {
+    fill: #007bff;
+    color: #2672c4;
+    width: 38px;
+    height: 43px;
+    place-self: start;
+    margin-right: -9px;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 999;
+    opacity: 1.5;
+    background-color: white;
+    display: inline-block;
+    border-radius: 60px;
+    box-shadow: 0 0 2px #888;
+    padding: 0.5em 0.6em;
 }
 
+.iconChat {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+    align-items: flex-start;
+    margin-top: -13px;
+}
 
+.bodySection {
+    min-height: 100vh;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+}
 
 @media (min-width : 900px) {
     body {
@@ -372,7 +420,7 @@ select {
         margin-right: 15px;
         margin-left: 15px;
     }
-    
+
     section {
         background: #F5EEDC;
         padding: 1rem 0;

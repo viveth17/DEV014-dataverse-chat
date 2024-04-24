@@ -63,13 +63,15 @@ export function Home(props) {
 </dialog>
   <div id="root"></div>
 </main>
-<p id="sharkSociety"> Shark Society </p>
-<img src="img/chat.svg" alt="Shark Society" id=iconGroupChat>
+<div class="iconChat">
+<svg id="iconChatGroup" xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24"><path d="M240-400h320v-80H240v80Zm0-120h480v-80H240v80Zm0-120h480v-80H240v80ZM80-80v-720q0-33 23.5-56.5T160-880h640q33 0 56.5 23.5T880-800v480q0 33-23.5 56.5T800-240H240L80-80Zm126-240h594v-480H160v525l46-45Zm-46 0v-480 480Z"/></svg>
+</div>
 <footer>
   <p class="p">
     Hecho por Mireilys e Iveth</p>
 </footer>
 `
+viewEl.classList.add("bodySection");
   const divElement = viewEl.querySelector('#root');
   //console.log('divElement', divElement);
   let statusData = data;
