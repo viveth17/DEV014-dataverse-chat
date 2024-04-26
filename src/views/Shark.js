@@ -1,6 +1,6 @@
 import data from '../data/dataset.js';
 
-export function Shark (props) {
+export function Shark () {
   const viewEl = document.createElement('div');
   data.forEach(item => {
     const liElement = document.createElement('li');

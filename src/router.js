@@ -1,22 +1,3 @@
-// let ROUTES = {};
-// let rootEl;
-// export { setRootEl, renderView, onURLChange, setRoutes };
-
-// function setRootEl(el) {
-//   rootEl = el;
-// }
-// function setRoutes (routes){
-//   ROUTES = routes;
-// }
-// function renderView(view) {
-//   rootEl.innerHTML = '';
-//   rootEl.appendChild(view());
-// }
-// function onURLChange(callback) {
-//   window.addEventListener('popstate', callback);
-// }
-
-
 
 let ROUTES = {};
 let rootEl;
@@ -33,17 +14,17 @@ export const setRoutes = (routes) => {
   // assign ROUTES
 }
 
-const queryStringToObject = (queryString) => {
-  // convert query string to URLSearchParams
-  // convert URLSearchParams to an object
-  // return the object
-}
+// const queryStringToObject = (queryString) => {
+//   // convert query string to URLSearchParams
+//   // convert URLSearchParams to an object
+//   // return the object
+// }
 
 const renderView = (pathname, props={}) => {
 
-  let view = ROUTES[pathname] ;
+  const view = ROUTES[pathname];
 
-  console.log('view:', view); 
+  // console.log('view:', view); 
 
   rootEl.appendChild(view)
 
@@ -55,10 +36,10 @@ const renderView = (pathname, props={}) => {
   // add the view element to the DOM root element
 } 
 
-export const navigateTo = (pathname, props={}) => {
-  // update window history with pushState
-  // render the view with the pathname and props
-}
+// export const navigateTo = (pathname, props={}) => {
+//   // update window history with pushState
+//   // render the view with the pathname and props
+// }
 
 export const onURLChange = (location) => {
   // parse the location for the pathname and search params

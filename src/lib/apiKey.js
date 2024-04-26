@@ -10,11 +10,11 @@ export const setApiKey = (key) => {
   if (isValidApiKey(key)){
     // Guardar la API KEY en Local Storage
     localStorage.setItem('apiKey', key);
-    console.log('API KEY guardada correctamente.');
+    // console.log('API KEY guardada correctamente.');
   } else {
     // Manejar el caso de clave incorrecta
     alert('Error: Clave API no válida.')
-    console.error('Error: Clave API no válida.');
+    // console.error('Error: Clave API no válida.');
   }
 };
 const isValidApiKey = (key) => {

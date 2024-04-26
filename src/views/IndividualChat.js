@@ -1,6 +1,6 @@
-export function IndividualChat(props) {
-    const viewEl = document.createElement('div');
-    viewEl.innerHTML = `
+export function IndividualChat() {
+  const viewEl = document.createElement('div');
+  viewEl.innerHTML = `
     <header>
     <h1>SharkInfo</h1>
     <h2>Sumérgete en el mundo de los tiburones</h2>
@@ -13,5 +13,5 @@ export function IndividualChat(props) {
       Hecho por Mireilys e Iveth</p>
   </footer> 
   `
-    return viewEl;
-  }
+  return viewEl;
+}

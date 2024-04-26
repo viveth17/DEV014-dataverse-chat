@@ -2,7 +2,7 @@ import data from '../data/dataset.js';
 import { filterData, sortBySharkSize, computeStats } from '../lib/dataFunctions.js';
 import { renderItems } from '../lib/views.js';
 
-export function Home(props) {
+export function Home() {
 
   const viewEl = document.createElement('div');
   viewEl.innerHTML = `
@@ -71,7 +71,7 @@ export function Home(props) {
     Hecho por Mireilys e Iveth</p>
 </footer>
 `
-viewEl.classList.add("bodySection");
+  viewEl.classList.add("bodySection");
   const divElement = viewEl.querySelector('#root');
   //console.log('divElement', divElement);
   let statusData = data;

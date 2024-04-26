@@ -50,7 +50,7 @@ window.addEventListener("DOMContentLoaded", () => {
   setRootEl(document.getElementById('root'));
   // invoke onURLChange 
   onURLChange(window.location)
-  console.log( 'window', (window.location));
+  // console.log( 'window', (window.location));
   // Agregando la funcionalidad de la ventana emergente
   const showApiKeyDialogButton = document.getElementById('showApiKeyDialog');
   const apiKeyDialog = document.getElementById('apiKeyDialog');
@@ -79,7 +79,7 @@ window.addEventListener("DOMContentLoaded", () => {
       // Implementar lógica para guardar y utilizar la API KEY aquí
      
       setApiKey(apiKey);
-      console.log('API KEY ingresada:', apiKey);
+      // console.log('API KEY ingresada:', apiKey);
       // Limpiar el input después de guardar la API KEY
       apiKeyInput.value = '';
 
