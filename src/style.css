@@ -8,9 +8,15 @@ ul {
 }
 
 img {
-    margin: 6px;
+    /* margin: 6px;
     width: 114px;
     height: 111px;
+    border-radius: 5px;
+    flex-basis: 70px;
+    box-shadow: 3px 3px 2px rgb(0 0 0 / 18%); */
+    margin: 6px;
+    width: 155px;
+    height: 169px;
     border-radius: 5px;
     flex-basis: 70px;
     box-shadow: 3px 3px 2px rgb(0 0 0 / 18%);
@@ -18,8 +24,18 @@ img {
 
 
 .card {
-    width: 357px;
+    /* width: 357px;
     height: 134px;
+    background: #F5EEDC;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 11px;
+    color: black;
+    margin: 5px;
+    list-style-type: none;
+    border-radius: 5px;
+    box-shadow: 1px 3px 3px rgba(0, 0, 0, 0.5); */
+    width: 357px;
+    height: 190px;
     background: #F5EEDC;
     font-family: Arial, Helvetica, sans-serif;
     font-size: 11px;
@@ -62,7 +78,6 @@ dl {
     display: flex;
     flex-direction: row;
     margin-top: 5px;
-
 }
 
 header {
@@ -327,6 +342,86 @@ select {
     min-height: 100vh;
     display: grid;
     grid-template-rows: auto 1fr auto;
+}
+
+.buttonInfoAndChat {
+    /* position: absolute;
+    margin-left: 135px;
+    margin-top: 97px; */
+    position: absolute;
+    margin-left: 238px;
+    margin-top: 154px;
+}
+
+#moreInfo {
+    background-color: rgb(250, 249, 249);
+    border-radius: 5px;
+    font-size: 12px;
+    font-family: sans-serif;
+    border-color: #007bff;
+    font-weight: 600;
+}
+
+#individualChat {
+    background-color: rgb(250, 249, 249);
+    border-radius: 5px;
+    font-size: 12px;
+    font-family: sans-serif;
+    border-color: #007bff;
+    font-weight: 600;
+}
+
+#imageShark {
+    margin: 15px;
+    width: 326px;
+    height: 266px;
+    border-radius: 5px;
+    flex-basis: 70px;
+    box-shadow: 3px 3px 2px rgb(0 0 0 / 18%);
+}
+
+.dlStyle {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    flex-direction: row;
+    padding: 0px;
+    justify-content: center;
+    border-radius: 5px;
+    background-color: #F5EEDC;
+}
+
+#textDescription {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    color: black;
+    text-align: left;
+    margin: 0cap;
+    margin-left: 10px;
+    margin-left: 22px;
+    margin-top: 5px;
+    margin-bottom: 2px;
+}
+
+#footerShark {
+    margin-top: 55px;
+}
+
+#nameShark {
+    margin: 5px 0px 3px 0;
+    margin-left: 23px;
+    font-size: 16px;
+    text-align: left;
+    color: #266bb6;
+}
+
+#scientificName {
+    color: black;
+    text-align: left;
+    margin: 0 0 5px 0;
+    margin-left: 21px;
+    opacity: 0.7;
+    font-style: italic;
 }
 
 @media (min-width : 900px) {

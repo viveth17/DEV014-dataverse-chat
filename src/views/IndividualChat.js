@@ -1,4 +1,4 @@
-export function IndividualChat() {
+export default function IndividualChat(props) {
   const viewEl = document.createElement('div');
   viewEl.innerHTML = `
     <header>

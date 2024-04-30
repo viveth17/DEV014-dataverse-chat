@@ -20,24 +20,24 @@ TODO:
 2.- Pasar "root element" a router.
 3.- Invocar el router para renderizar la vista correcta.
 */
-import { Home } from './views/Home.js'; /// Home ---> { Home }
-import { Shark } from './views/Shark.js';
-import { IndividualChat } from './views/IndividualChat.js';
-import { GroupChat } from './views/GroupChat.js';
-import { Error } from './views/Error.js';
+import Home from './views/Home.js'; /// Home ---> { Home }
+import  Shark  from './views/Shark.js';
+import  IndividualChat  from './views/IndividualChat.js';
+import  GroupChat  from './views/GroupChat.js';
+import  Error  from './views/Error.js';
 // ... import other views
 import { setRootEl, setRoutes, onURLChange} from './router.js';
 import { setApiKey } from './lib/apiKey.js';
-//import { getApiKey, setApiKey } from './lib/apiKey';
+// import { getApiKey, setApiKey } from './lib/apiKey';
 
 
 // Define your routes and their associated views
 const routes = {
-  '/': Home(),
-  '/shark': Shark(),
-  '/individualchat': IndividualChat (),
-  '/groupchat': GroupChat (),
-  '/error': Error ()
+  '/': Home,
+  '/shark': Shark,
+  '/individualchat': IndividualChat,
+  '/groupchat': GroupChat,
+  '/error': Error
   // ...
 };
 
@@ -60,11 +60,16 @@ window.addEventListener("DOMContentLoaded", () => {
       apiKeyDialog.showModal();
     }
   });
+ // Handle URL changes forward and back
+  window.addEventListener("popstate", () => {
+    onURLChange(window.location);
+  });
+
   //cerrar el dialogo al hacer click en la "X"
-  const closeApiKeyDialogButton = document.getElementById ('closeApiKeyDialog');
-  if (closeApiKeyDialogButton){
+  const closeApiKeyDialogButton = document.getElementById('closeApiKeyDialog');
+  if (closeApiKeyDialogButton) {
     closeApiKeyDialogButton.addEventListener('click', () => {
-      if (apiKeyDialog){
+      if (apiKeyDialog) {
         apiKeyDialog.close();
       }
     });
@@ -72,12 +77,12 @@ window.addEventListener("DOMContentLoaded", () => {
   //Guardar la API KEY al hacer click en el botón de "Guardar API KEY"
   const saveApiKeyButton = document.getElementById('saveApiKeyButton');
   if (saveApiKeyButton) {
-   
+
     saveApiKeyButton.addEventListener('click', () => {
       const apiKeyInput = document.getElementById('apiKeyInput');
       const apiKey = apiKeyInput.value.trim(); // Obtener y limpiar el valor de la API KEY
       // Implementar lógica para guardar y utilizar la API KEY aquí
-     
+
       setApiKey(apiKey);
       // console.log('API KEY ingresada:', apiKey);
       // Limpiar el input después de guardar la API KEY

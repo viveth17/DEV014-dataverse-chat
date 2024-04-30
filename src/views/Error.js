@@ -1,4 +1,4 @@
-export function Error() {
+export default function Error() {
   const viewEl = document.createElement('div');
   viewEl.innerHTML = `
     <header>
