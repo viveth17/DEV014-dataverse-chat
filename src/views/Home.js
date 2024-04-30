@@ -1,8 +1,8 @@
-import data from '../data/dataset.js';
+import { data } from '../data/dataset.js';
 import { filterData, sortBySharkSize, computeStats } from '../lib/dataFunctions.js';
 import { renderItems } from '../lib/views.js';
 
-export function Home() {
+export default function Home()  {
 
   const viewEl = document.createElement('div');
   viewEl.innerHTML = `
@@ -119,10 +119,9 @@ export function Home() {
     statusData = data;
     divElement.replaceChildren(renderItems(statusData));
     viewEl.querySelector('#locationOfTheSpecie').value = 'Todas';
-    const maximumSizeSelect =viewEl.querySelector('#maximumSizeMtr');
+    const maximumSizeSelect = viewEl.querySelector('#maximumSizeMtr');
     maximumSizeSelect.value = 'Sin orden';
     viewEl.querySelector('#longevityText').innerHTML = 'Longevidad promedio:';
   })
-  
   return viewEl;
 }

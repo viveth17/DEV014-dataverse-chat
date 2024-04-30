@@ -1,4 +1,4 @@
-export default [
+export const data = [
   {
     "id": "megachasma_pelagios",
     "name": "Tiburón Megamouth",

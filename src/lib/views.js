@@ -1,3 +1,5 @@
+import { navigateTo } from '../router.js';
+
 export const renderItems = (data) => {
   const ulElement = document.createElement('ul');
   data.forEach(item => {
@@ -15,14 +17,22 @@ export const renderItems = (data) => {
       <p itemprop="maximumSizeMtr" class="numberMts"> <strong>Tamaño: </strong> ${item.maximumSizeMtr} Mtr</p>
       <p itemprop="locationOfTheSpecie" class="location"> <strong> Hábitat :  </strong>${item.facts.locationOfTheSpecie}</p>
       </div>
+      <div class="buttonInfoAndChat">
+      <button id="moreInfo"> Más info </button>
+      <button id="individualChat"> Chat </button>
+      </div> 
       </dl>
     `
-  
+    //botón Más Info//
+    const buttonMoreInfo = liElement.querySelector('#moreInfo');
+    buttonMoreInfo.addEventListener('click', () => navigateTo("/shark", { id: item.id }));
+    //botón Chat//
+    const buttonIndividualChat = liElement.querySelector('#individualChat');
+    buttonIndividualChat.addEventListener('click', () => navigateTo("/individualchat", { id: item.id, name: item.name }));
     ulElement.appendChild(liElement);
-  
-  
+
+
   });
   return ulElement;
-  
+
 };
-  
