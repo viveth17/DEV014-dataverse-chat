@@ -54,6 +54,8 @@ export const navigateTo = (pathname, props={}) => {
 }
 
 export const onURLChange = (location) => {
+  const {pathname, search} = location;
+  const searchParams = queryStringToObject (search)
   // parse the location for the pathname and search params
   // convert the search params to an object
   let paramsToObject = queryStringToObject(location.search)
