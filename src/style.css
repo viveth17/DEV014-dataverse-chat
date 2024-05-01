@@ -505,6 +505,7 @@ select {
         background-color: #007bff;
         border-color: #007bff;
         cursor: pointer;
+        margin-right: 20 px;
     }
 
     #longevityText {
@@ -512,8 +513,9 @@ select {
         color: black;
         font-size: medium;
         font-weight: 700;
-        margin-right: 15px;
-        margin-left: 15px;
+        margin-right: 10px;
+        margin-left: 1px;
+        position: relative;
     }
 
     section {
@@ -554,8 +556,43 @@ select {
         color: #fff;
         background-color: #007bff;
         border-color: #007bff;
-        margin-left: auto;
-        margin-right: 15px;
+        margin-right: 125px;
         cursor: pointer;
+    }
+    .buttonInfoAndChat {
+        /* position: absolute;
+        margin-left: 135px;
+        margin-top: 97px; */
+        position: absolute;
+        margin-left: 300px;
+        margin-top: 370px;
+    }
+    .apiKeyContainer>p {
+        margin: 0;
+        font-size: 8px;
+        text-align: center;
+        line-height: 0.8;
+        color: #266bb6;
+        position: absolute;
+        right: 95px;
+        top: 90%;
+        transform: translateY(-50%);
+    }
+    #showApiKeyDialog {
+        fill: #007bff;
+        color: #2672c4;
+        width: 25px;
+        height: 25px;
+        place-self: start;
+        position: absolute;
+        right: 95px;
+        top: 85%;
+        transform: translateY(-50%);
+    }
+    header{
+        padding: 70px;
+    }
+    footer {
+        padding:0rem;
     }
 }
