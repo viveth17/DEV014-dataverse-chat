@@ -28,10 +28,11 @@ export const renderItems = (data) => {
     buttonMoreInfo.addEventListener('click', () => navigateTo("/shark", { id: item.id }));
     //botón Chat Individual//
     const buttonIndividualChat = liElement.querySelector('#individualChat');
-    buttonIndividualChat.addEventListener('click', () => navigateTo("/individualchat", { id: item.id, name: item.name }));
+    buttonIndividualChat.addEventListener('click', () => navigateTo("/individualchat", { id: item.id}));
     ulElement.appendChild(liElement);
 
-  });
+
+  }); 
   return ulElement;
 
 };
