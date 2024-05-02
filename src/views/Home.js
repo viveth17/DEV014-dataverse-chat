@@ -1,6 +1,7 @@
 import { data } from '../data/dataset.js';
 import { filterData, sortBySharkSize, computeStats } from '../lib/dataFunctions.js';
 import { renderItems } from '../lib/views.js';
+import { setApiKey } from '../lib/apiKey.js';
 
 export default function Home()  {
 
@@ -33,7 +34,7 @@ export default function Home()  {
     </div>
      <!--Imagen de la llave-->
      <div class="apiKeyContainer">
-     <svg id="showApiKeyDialog" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="
+     <svg id="apiKeyIcon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="
    ">
        <path fill-rule="evenodd" clip-rule="evenodd"
          d="M13 12.8293C14.1652 12.4175 15 11.3062 15 10C15 8.34315 13.6569 7 12 7C10.3431 7 9 8.34315 9 10C9 11.3062 9.83481 12.4175 11 12.8293V16C11 16.5523 11.4477 17 12 17C12.5523 17 13 16.5523 13 16V12.8293ZM11 10C11 10.5523 11.4477 11 12 11C12.5523 11 13 10.5523 13 10C13 9.44772 12.5523 9 12 9C11.4477 9 11 9.44772 11 10Z"
@@ -123,5 +124,46 @@ export default function Home()  {
     maximumSizeSelect.value = 'Sin orden';
     viewEl.querySelector('#longevityText').innerHTML = 'Longevidad promedio:';
   })
+  // evento icon key
+  // Agregando la funcionalidad de la ventana emergente
+  const showApiKeyDialogButton = viewEl.querySelector('#apiKeyIcon');
+  const apiKeyDialog = viewEl.querySelector('#apiKeyDialog');
+  // Muestra el dialogo al hacer click en la imagen de la llave
+  showApiKeyDialogButton.addEventListener('click', () => {
+    if (apiKeyDialog) {
+      apiKeyDialog.showModal();
+    }
+  });
+
+  //cerrar el dialogo al hacer click en la "X"
+  const closeApiKeyDialogButton = viewEl.querySelector('#closeApiKeyDialog');
+  if (closeApiKeyDialogButton) {
+    closeApiKeyDialogButton.addEventListener('click', () => {
+      if (apiKeyDialog) {
+        apiKeyDialog.close();
+      }
+    });
+  }
+  //Guardar la API KEY al hacer click en el botón de "Guardar API KEY"
+  const saveApiKeyButton = viewEl.querySelector('#saveApiKeyButton');
+  if (saveApiKeyButton) {
+
+    saveApiKeyButton.addEventListener('click', () => {
+      const apiKeyInput = viewEl.querySelector('#apiKeyInput');
+      const apiKey = apiKeyInput.value.trim(); // Obtener y limpiar el valor de la API KEY
+      // Implementar lógica para guardar y utilizar la API KEY aquí
+
+      setApiKey(apiKey);
+      // console.log('API KEY ingresada:', apiKey);
+      // Limpiar el input después de guardar la API KEY
+      apiKeyInput.value = '';
+
+      // Cerrar el diálogo después de guardar la API KEY
+      if (apiKeyDialog) {
+        apiKeyDialog.close();
+      }
+    });
+  }
+
   return viewEl;
 }
