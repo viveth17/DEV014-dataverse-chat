@@ -2,6 +2,7 @@ import { data } from '../data/dataset.js';
 import { filterData, sortBySharkSize, computeStats } from '../lib/dataFunctions.js';
 import { renderItems } from '../lib/views.js';
 import { setApiKey } from '../lib/apiKey.js';
+import { navigateTo } from '../router.js';
 
 export default function Home()  {
 
@@ -165,5 +166,9 @@ export default function Home()  {
     });
   }
 
+
+  //botón Chat Grupal//
+  const buttonGroupChat = viewEl.querySelector('#iconChatGroup');
+  buttonGroupChat.addEventListener('click', () => navigateTo("/groupchat", { }));
   return viewEl;
 }

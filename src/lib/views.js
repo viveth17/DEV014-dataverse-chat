@@ -26,7 +26,7 @@ export const renderItems = (data) => {
     //botón Más Info//
     const buttonMoreInfo = liElement.querySelector('#moreInfo');
     buttonMoreInfo.addEventListener('click', () => navigateTo("/shark", { id: item.id }));
-    //botón Chat//
+    //botón Chat Individual//
     const buttonIndividualChat = liElement.querySelector('#individualChat');
     buttonIndividualChat.addEventListener('click', () => navigateTo("/individualchat", { id: item.id}));
     ulElement.appendChild(liElement);

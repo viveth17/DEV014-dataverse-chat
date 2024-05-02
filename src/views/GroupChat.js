@@ -1,4 +1,4 @@
-export default function GroupChat() {
+export default function GroupChat(props) {
   const viewEl = document.createElement('div');
   viewEl.innerHTML = `
     <header>
