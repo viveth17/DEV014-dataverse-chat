@@ -2,10 +2,11 @@ import { data } from '../data/dataset.js';
 import { filterData } from '../lib/dataFunctions.js';
 import { navigateTo } from '../router.js';
 import { setApiKey } from '../lib/apiKey.js';
+import { communicateWithOpenAI } from "../lib/openAIApi.js";
 
 export default function IndividualChat(props) {
   const shark = filterData(data, 'id', props.id)[0];
-  console.log('arreglo', shark.name);
+  //console.log('arreglo', shark.name);
   const viewEl = document.createElement('div');
   viewEl.innerHTML = `
     <section class="contentIcons">

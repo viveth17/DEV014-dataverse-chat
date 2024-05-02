@@ -1,5 +1,12 @@
+// import { data } from '../data/dataset.js';
+// import { filterData } from '../lib/dataFunctions.js';
+// import { navigateTo } from '../router.js';
+// import { setApiKey } from '../lib/apiKey.js';
+// import { communicateWithOpenAI } from "../lib/openAIApi.js";
+
 export default function GroupChat(props) {
   const viewEl = document.createElement('div');
+
   viewEl.innerHTML = `
     <header>
     <h1>SharkInfo</h1>
