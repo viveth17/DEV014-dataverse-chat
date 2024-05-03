@@ -133,7 +133,17 @@ export default function IndividualChat(props) {
     navigateTo("/groupchat");
   });
 
+  
+  //evento icon "enviar"
+  const buttonSend = viewEl.querySelector("#iconSends");
+  buttonSend.addEventListener("click", () => {
+  //para obtener campo de texto ingresado por el usuario
+  let wordsUser = viewEl.querySelector("#input-message").value;
+  console.log('texto en el input:', wordsUser);
+    // //Invocar funcion para comunicar con Open IA (pasando el texto ingresado por el usuario)
+    communicateWithOpenAI(wordsUser).then(Response => {
+      console.log("responOpenia", Response.choices[0].message.content);
+    })
+  });
   return viewEl;
 }
-
-
