@@ -1,7 +1,7 @@
 import { getApiKey } from './apiKey.js';
 
 
-export const communicateWithOpenAI = (messages,) => {
+export  const  communicateWithOpenAI = (messages) => {
 //Aquí es donde debes implementar la petición con fetch o axios
   // Obtener la clave de API
   const apiKey = getApiKey();
@@ -17,7 +17,7 @@ export const communicateWithOpenAI = (messages,) => {
     max_tokens: 50 // número máximo de tokens para generar
   };
 
-  // Opciones de la solicitud
+  // Opciones de la solicitud 'request'
   const options = {
     method: 'POST',
     headers: {
