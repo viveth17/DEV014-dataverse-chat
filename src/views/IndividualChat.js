@@ -1,7 +1,7 @@
 import { data } from '../data/dataset.js';
 import { filterData } from '../lib/dataFunctions.js';
 import { navigateTo } from '../router.js';
-import { setApiKey } from '../lib/apiKey.js';
+import { setApiKey, getApiKey } from '../lib/apiKey.js';
 import { communicateWithOpenAI } from "../lib/openAIApi.js";
 
 export default function IndividualChat(props) {
@@ -138,10 +138,11 @@ export default function IndividualChat(props) {
   const buttonSend = viewEl.querySelector("#iconSends");
   buttonSend.addEventListener("click", () => {
   //para obtener campo de texto ingresado por el usuario
-  let wordsUser = viewEl.querySelector("#input-message").value;
-  console.log('texto en el input:', wordsUser);
+    const wordsUser = viewEl.querySelector("#input-message").value;
+    console.log('texto en el input:', wordsUser);
     // //Invocar funcion para comunicar con Open IA (pasando el texto ingresado por el usuario)
-    communicateWithOpenAI(wordsUser).then(Response => {
+    const apiKey = getApiKey();
+    communicateWithOpenAI(wordsUser, props.id, apiKey).then(Response => {
       console.log("responOpenia", Response.choices[0].message.content);
     })
   });

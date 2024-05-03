@@ -1,10 +1,11 @@
-import { getApiKey } from './apiKey.js';
+// import { getApiKey } from './apiKey.js';
 
 
-export  const  communicateWithOpenAI = (messages) => {
+export const communicateWithOpenAI = (messages,id, apiKey) => {
+  console.log('nombre por id',id);
 //Aquí es donde debes implementar la petición con fetch o axios
   // Obtener la clave de API
-  const apiKey = getApiKey();
+  // apiKey = getApiKey();
   // URL de la API de OpenAI
   const url = 'https://api.openai.com/v1/chat/completions';
   
@@ -12,12 +13,15 @@ export  const  communicateWithOpenAI = (messages) => {
   // Cuerpo de la solicitud con el texto de entrada
   const body = {
     model: "gpt-3.5-turbo",
-    messages: [{ role: "user", content: messages }],
+    messages: [
+      { role: "user", content: messages },
+      { role:"system", content:`Responde en primera persona como si fueras el tiburón: ${id}`}
+    ],
     temperature: 0.7,
     max_tokens: 50 // número máximo de tokens para generar
   };
 
-  // Opciones de la solicitud 'request'
+  // Opciones de la solicitud
   const options = {
     method: 'POST',
     headers: {
