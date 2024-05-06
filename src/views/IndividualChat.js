@@ -52,6 +52,8 @@ export default function IndividualChat(props) {
     <div class="imgSharkChat">
     <img class="sharkImg" src= ${shark.imageUrl} alt="imagen tiburon">
     </div>
+    <div class="response-container">
+    </div>
     <div class="imgContentChat">
     <form class="flex-Input">
     <div class="input-container">
@@ -139,11 +141,37 @@ export default function IndividualChat(props) {
   buttonSend.addEventListener("click", () => {
   //para obtener campo de texto ingresado por el usuario
     const wordsUser = viewEl.querySelector("#input-message").value;
-    console.log('texto en el input:', wordsUser);
+    // console.log('texto en el input:', wordsUser);
+     
     // //Invocar funcion para comunicar con Open IA (pasando el texto ingresado por el usuario)
     const apiKey = getApiKey();
     communicateWithOpenAI(wordsUser, props.id, apiKey).then(Response => {
+  //crear y mostrar las respuestas de OpenAI//
+      const viewChat = document.createElement('div');
+      console.log('palabras x el usuario', wordsUser);
+      viewChat.innerHTML = `
+      <div class="user-response">
+        <span class="wordsuser"> ${wordsUser} </span>
+        </div>
+    `
+    viewEl.querySelector(".response-container").appendChild(viewChat);
+      // viewEl.appendChild(viewChat);
       console.log("responOpenia", Response.choices[0].message.content);
+      // obtener la respuesta de openAI
+        const viewChatOpenIa = document.createElement('div');
+    viewChatOpenIa.innerHTML = `
+    <div class="ai-response">
+    <span class="responsemessage">
+    ${Response.choices[0].message.content}
+    </span>
+  </div>
+  `
+  viewEl.querySelector(".response-container").appendChild(viewChatOpenIa);
+
+  // Limpiar el contenido del input despues de enviar
+  const inputMessage = viewEl.querySelector("#input-message");
+  inputMessage.value = "";
+
     })
   });
   return viewEl;
