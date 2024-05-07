@@ -48,9 +48,12 @@ export default function IndividualChat(props) {
   <main>
     <div id="root"></div>
     <div id="bodyChat">
+    <div class="menu"> 
     <h3 class="nameSharks"> ${shark.name} </h3>
+    <h4 class="online">Online </h4>
     <div class="imgSharkChat">
     <img class="sharkImg" src= ${shark.imageUrl} alt="imagen tiburon">
+    </div>
     </div>
     <div class="response-container">
     </div>
@@ -76,10 +79,6 @@ export default function IndividualChat(props) {
   </div>
 </dialog>
   </main>
-  <footer>
-    <p class="p">
-      Hecho por Mireilys e Iveth</p>
-  </footer> 
   `
 
   // evento icon Home
