@@ -40,6 +40,7 @@ p {
     margin-left: 10px;
     margin-top: 5px;
     margin-bottom: 2px;
+    margin-right: 10px;
 }
 
 h3 {
@@ -209,10 +210,11 @@ select {
 
 .apiKeyContainer>p {
     margin: 0;
-    font-size: 8px;
+    font-size: 11px;
     text-align: center;
     line-height: 0.8;
-    color: #266bb6;
+    color: black;
+    font-family: 'Inter', sans-serif;
 }
 
 #showApiKeyDialog {
@@ -352,9 +354,17 @@ select {
     font-weight: 600;
 }
 
+/* Estilos Vista Shark */
+.infoContainer{
+    background-color: #DAD7D7;
+    padding: 19px;
+    text-align: center;
+    height: 514px;
+    width: 337px;
+}
 #imageShark {
     margin: 15px;
-    width: 326px;
+    width: 312px;
     height: 266px;
     border-radius: 5px;
     flex-basis: 70px;
@@ -378,19 +388,20 @@ select {
     color: black;
     text-align: left;
     margin: 0cap;
-    margin-left: 10px;
+    margin:5px 10px 10px 10px ;
+    /* margin-left: 10px;
     margin-left: 22px;
     margin-top: 5px;
-    margin-bottom: 2px;
+    margin-bottom: 2px; */
 }
 
-#footerShark {
+/* #footerShark {
     margin-top: 55px;
-}
+} */
 
 #nameShark {
     margin: 5px 0px 3px 0;
-    margin-left: 23px;
+    margin-left: 10px;
     font-size: 16px;
     text-align: left;
     color: #266bb6;
@@ -400,7 +411,7 @@ select {
     color: black;
     text-align: left;
     margin: 0 0 5px 0;
-    margin-left: 21px;
+    margin-left: 10px;
     opacity: 0.7;
     font-style: italic;
 }
@@ -433,11 +444,11 @@ select {
     height: 43px;
 }
 
-#apiKeyIcon {
+.iconKey {
     fill: #007bff;
     color: #007bff;
-    width: 45px;
-    height: 43px;
+    width: 38px;
+    height: 42px;
     display: flex;
     flex-direction: row-reverse;
     flex-wrap: nowrap;
@@ -594,7 +605,7 @@ select {
 
 
 
-@media (min-width : 900px) {
+@media (min-width : 1200px) {
     body {
         background-color: rgb(209, 206, 206);
     }
@@ -642,6 +653,7 @@ select {
 
     h1 {
         font-size: 64px;
+        margin: 0px;
     }
 
     h2 {
@@ -650,7 +662,7 @@ select {
 
     div {
         align-self: start;
-        margin-left: 10px;
+        margin-left: 0px;
         margin-top: 5px;
     }
 
@@ -685,7 +697,8 @@ select {
         background-color: #007bff;
         border-color: #007bff;
         cursor: pointer;
-        margin-right: 20 px;
+        /* margin-right: 20 px; */
+        margin-left: -118px;
     }
 
     #longevityText {
@@ -693,8 +706,8 @@ select {
         color: black;
         font-size: medium;
         font-weight: 700;
-        margin-right: 10px;
-        margin-left: 1px;
+        margin-right: 124px;
+        margin-left: 49px;
         position: relative;
     }
 
@@ -712,8 +725,8 @@ select {
         color: black;
         font-size: medium;
         font-weight: 700;
-        margin-right: 15px;
-        margin-left: 15px;
+        /* margin-right: 15px; */
+        margin-left: 45px;
     }
 
     select {
@@ -725,6 +738,13 @@ select {
         border-radius: 5px;
         font-size: medium;
         font-family: sans-serif;
+        margin-left: 42px;
+        
+    }
+    .actionsContainer {
+        display: flex;
+        gap: 12px;
+        place-items: center;
     }
 
     #clearFilter {
@@ -736,8 +756,11 @@ select {
         color: #fff;
         background-color: #007bff;
         border-color: #007bff;
-        margin-right: 125px;
+        margin-left: 1245px;
+        margin-top: 39px;
         cursor: pointer;
+        position: absolute;
+        transform: translateY(-50%);
     }
 
     .buttonInfoAndChat {
@@ -752,15 +775,25 @@ select {
     }
 
     .apiKeyContainer>p {
+        font-size: medium;
+        /* text-align: center;
+        line-height: 0.8; */
+        text-align: initial;
+        color: black;
+        position: absolute;
+        margin-left: 712px;
+        margin-top: 32px;
+        transform: translateY(-50%);
+        white-space: nowrap;
+        font-family: 'Inter', sans-serif;
+        font-weight: 700;
+    }
+    .textkeydesktop{
         margin: 0;
-        font-size: 8px;
+        font-size: 12px;
         text-align: center;
         line-height: 0.8;
         color: #266bb6;
-        position: absolute;
-        right: 95px;
-        top: 90%;
-        transform: translateY(-50%);
     }
 
     #showApiKeyDialog {
@@ -773,6 +806,21 @@ select {
         right: 95px;
         top: 85%;
         transform: translateY(-50%);
+    }
+    .iconKey{
+    fill: #007bff;
+    color: #007bff;
+    width: 45px;
+    height: 43px;
+    /* display: flex;
+    flex-direction: row-reverse;
+    flex-wrap: nowrap;
+    align-content: center;
+    justify-content: space-between; */
+    position: absolute;
+    margin-left: 720px;
+    margin-top: 5px;
+    transform: translateY(-50%);
     }
 
     #iconChatGroup {
@@ -796,155 +844,10 @@ select {
 
     header {
         padding: 70px;
+
     }
 
     footer {
         padding: 0rem;
     }
-
-    /* VISTA CHAT INDIVIDUAL DESKTOP */
-    .contentIcons {
-        display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
-        height: 40px;
-        background: #F5EEDC;
-        align-items: flex-end;
-        justify-content: space-between;
-        align-content: stretch;
-        padding: 1rem 0;
-        margin: 0 0%;
-    }
-
-    #homeIcon {
-        fill: #007bff;
-        color: #007bff;
-        width: 43px;
-        height: 40px;
-        display: flex;
-        flex-direction: row-reverse;
-        flex-wrap: nowrap;
-        align-content: center;
-        justify-content: space-between;
-    }
-
-    #textHome {
-        margin: 0;
-        font-size: 12px;
-        text-align: center;
-        line-height: 0.8;
-        color: #266bb6;
-    }
-
-    #apiKeyIcon {
-        fill: #007bff;
-        color: #007bff;
-        width: 43px;
-        height: 40px;
-        display: flex;
-        flex-direction: row-reverse;
-        flex-wrap: nowrap;
-        align-content: center;
-        justify-content: space-between;
-    }
-
-    #textKey {
-        position: absolute;
-        margin: 0;
-        font-size: 12px;
-        text-align: center;
-        line-height: 0.8;
-        color: #266bb6;
-        right: 696px;
-        top: 11%;
-        transform: translateY(-130%);
-    }
-
-    #iconChatG {
-        fill: #007bff;
-        color: #007bff;
-        width: 43px;
-        height: 40px;
-        display: flex;
-        flex-direction: row-reverse;
-        flex-wrap: nowrap;
-        align-content: center;
-        justify-content: space-between;
-    }
-
-    .menu {
-        display: grid;
-        grid-template-columns: 80px 1fr;
-        padding: 0px 10px 0;
-        background-color: #dee4eb;
-        border-top: 2px solid #cfcfcf;
-        border-bottom: 2px solid #cfcfcf;
-        column-gap: 8px;
-        box-shadow: 0px 16px 6px 1px rgb(174 174 174 / 55%);
-        margin-left: 0px;
-        margin-top: 5px;
-    }
-
-    .message-input {
-        margin-top: 472px;
-        border-radius: 3rem;
-        border: none;
-        box-shadow: inset 0px 0px 4px rgba(0, 0, 0, 0.5);
-        height: 57px;
-        width: calc(100% - 80px);
-        padding-left: 1rem;
-        font-size: 23px;
-    }
-
-    #iconSends {
-        position: absolute;
-        bottom: 8px;
-        transform: translateX(-57px);
-        width: 46px;
-        height: 46px;
-        fill: #007bff;
-        color: #007bff;
-    }
-
-    .sharkImg {
-        margin: 0;
-        width: 60px;
-        height: 60px;
-        border-radius: 4rem;
-        box-shadow: 3px 3px 2px rgb(0 0 0 / 18%);
-    }
-
-    .nameSharks {
-        font-size: 21px;
-        color: black;
-        font-family: Arial, Helvetica, sans-serif;
-        margin: 0;
-        place-self: end start;
-    }
-
-    .online {
-        margin: 0;
-        color: green;
-        font-family: sans-serif;
-        font-style: normal;
-        text-align: left;
-        opacity: 0.7;
-        font-size: 15px;
-    }
-
-    #bodyChat {
-        background-image: url(https://i.ibb.co/7j0dKxx/Rectangle-47-1.png);
-        width: 100%;
-        height: 100%;
-        background-repeat: round;
-        margin-left: 0px;
-        margin-top: 5px;
-    }
-
-    .input-container {
-        position: relative;
-        margin-left: 0;
-        margin-top: 5px;
-    }
-
 }
