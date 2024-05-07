@@ -29,7 +29,7 @@ export default function IndividualChat(props) {
     </div>
     <!--Imagen de la llave-->
     <div class="apiKeyContainer">
-    <svg id="apiKeyIcon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="
+    <svg id="apiKeyIcon" class="icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="
   ">
       <path fill-rule="evenodd" clip-rule="evenodd"
         d="M13 12.8293C14.1652 12.4175 15 11.3062 15 10C15 8.34315 13.6569 7 12 7C10.3431 7 9 8.34315 9 10C9 11.3062 9.83481 12.4175 11 12.8293V16C11 16.5523 11.4477 17 12 17C12.5523 17 13 16.5523 13 16V12.8293ZM11 10C11 10.5523 11.4477 11 12 11C12.5523 11 13 10.5523 13 10C13 9.44772 12.5523 9 12 9C11.4477 9 11 9.44772 11 10Z"
@@ -38,7 +38,7 @@ export default function IndividualChat(props) {
         d="M12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2ZM4 12C4 16.4183 7.58172 20 12 20C16.4183 20 20 16.4183 20 12C20 7.58172 16.4183 4 12 4C7.58172 4 4 7.58172 4 12Z"
         fill="currentColor"></path>
     </svg>
-    <p id="textKey">Api Key</p>
+    <p id="textKey" class="textkeydesktop">Api Key</p>
   </div>
   <div class="iconChat">
 <svg id="iconChatG" xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24"><path d="M240-400h320v-80H240v80Zm0-120h480v-80H240v80Zm0-120h480v-80H240v80ZM80-80v-720q0-33 23.5-56.5T160-880h640q33 0 56.5 23.5T880-800v480q0 33-23.5 56.5T800-240H240L80-80Zm126-240h594v-480H160v525l46-45Zm-46 0v-480 480Z"/></svg>
@@ -146,31 +146,31 @@ export default function IndividualChat(props) {
     // //Invocar funcion para comunicar con Open IA (pasando el texto ingresado por el usuario)
     const apiKey = getApiKey();
     communicateWithOpenAI(wordsUser, props.id, apiKey).then(Response => {
-  //crear y mostrar las respuestas de OpenAI//
+      //crear y mostrar las respuestas de OpenAI//
       const viewChat = document.createElement('div');
-      console.log('palabras x el usuario', wordsUser);
+      //console.log('palabras x el usuario', wordsUser);
       viewChat.innerHTML = `
       <div class="user-response">
         <span class="wordsuser"> ${wordsUser} </span>
         </div>
     `
-    viewEl.querySelector(".response-container").appendChild(viewChat);
+      viewEl.querySelector(".response-container").appendChild(viewChat);
       // viewEl.appendChild(viewChat);
-      console.log("responOpenia", Response.choices[0].message.content);
+      //console.log("responOpenia", Response.choices[0].message.content);
       // obtener la respuesta de openAI
-        const viewChatOpenIa = document.createElement('div');
-    viewChatOpenIa.innerHTML = `
+      const viewChatOpenIa = document.createElement('div');
+      viewChatOpenIa.innerHTML = `
     <div class="ai-response">
     <span class="responsemessage">
     ${Response.choices[0].message.content}
     </span>
   </div>
   `
-  viewEl.querySelector(".response-container").appendChild(viewChatOpenIa);
+      viewEl.querySelector(".response-container").appendChild(viewChatOpenIa);
 
-  // Limpiar el contenido del input despues de enviar
-  const inputMessage = viewEl.querySelector("#input-message");
-  inputMessage.value = "";
+      // Limpiar el contenido del input despues de enviar
+      const inputMessage = viewEl.querySelector("#input-message");
+      inputMessage.value = "";
 
     })
   });

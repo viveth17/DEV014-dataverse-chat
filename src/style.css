@@ -56,6 +56,7 @@ p {
     margin-left: 10px;
     margin-top: 5px;
     margin-bottom: 2px;
+    margin-right: 10px;
 }
 
 h3 {
@@ -225,10 +226,11 @@ select {
 
 .apiKeyContainer>p {
     margin: 0;
-    font-size: 8px;
+    font-size: 11px;
     text-align: center;
     line-height: 0.8;
-    color: #266bb6;
+    color: black;
+    font-family: 'Inter', sans-serif;
 }
 
 #showApiKeyDialog {
@@ -371,9 +373,17 @@ select {
     font-weight: 600;
 }
 
+/* Estilos Vista Shark */
+.infoContainer{
+    background-color: #DAD7D7;
+    padding: 19px;
+    text-align: center;
+    height: 514px;
+    width: 337px;
+}
 #imageShark {
     margin: 15px;
-    width: 326px;
+    width: 312px;
     height: 266px;
     border-radius: 5px;
     flex-basis: 70px;
@@ -397,19 +407,20 @@ select {
     color: black;
     text-align: left;
     margin: 0cap;
-    margin-left: 10px;
+    margin:5px 10px 10px 10px ;
+    /* margin-left: 10px;
     margin-left: 22px;
     margin-top: 5px;
-    margin-bottom: 2px;
+    margin-bottom: 2px; */
 }
 
-#footerShark {
+/* #footerShark {
     margin-top: 55px;
-}
+} */
 
 #nameShark {
     margin: 5px 0px 3px 0;
-    margin-left: 23px;
+    margin-left: 10px;
     font-size: 16px;
     text-align: left;
     color: #266bb6;
@@ -419,7 +430,7 @@ select {
     color: black;
     text-align: left;
     margin: 0 0 5px 0;
-    margin-left: 21px;
+    margin-left: 10px;
     opacity: 0.7;
     font-style: italic;
 }
@@ -453,11 +464,11 @@ select {
     height: 43px;
 }
 
-#apiKeyIcon {
+.iconKey {
     fill: #007bff;
     color: #007bff;
-    width: 45px;
-    height: 43px;
+    width: 38px;
+    height: 42px;
     display: flex;
     flex-direction: row-reverse;
     flex-wrap: nowrap;
@@ -616,7 +627,7 @@ select {
 
 
 
-@media (min-width : 900px) {
+@media (min-width : 1200px) {
     body {
         background-color: rgb(209, 206, 206);
     }
@@ -664,6 +675,7 @@ select {
 
     h1 {
         font-size: 64px;
+        margin: 0px;
     }
 
     h2 {
@@ -672,7 +684,7 @@ select {
 
     div {
         align-self: start;
-        margin-left: 10px;
+        margin-left: 0px;
         margin-top: 5px;
     }
 
@@ -707,7 +719,8 @@ select {
         background-color: #007bff;
         border-color: #007bff;
         cursor: pointer;
-        margin-right: 20 px;
+        /* margin-right: 20 px; */
+        margin-left: -118px;
     }
 
     #longevityText {
@@ -715,8 +728,8 @@ select {
         color: black;
         font-size: medium;
         font-weight: 700;
-        margin-right: 10px;
-        margin-left: 1px;
+        margin-right: 124px;
+        margin-left: 49px;
         position: relative;
     }
 
@@ -734,8 +747,8 @@ select {
         color: black;
         font-size: medium;
         font-weight: 700;
-        margin-right: 15px;
-        margin-left: 15px;
+        /* margin-right: 15px; */
+        margin-left: 45px;
     }
 
     select {
@@ -747,6 +760,13 @@ select {
         border-radius: 5px;
         font-size: medium;
         font-family: sans-serif;
+        margin-left: 42px;
+        
+    }
+    .actionsContainer {
+        display: flex;
+        gap: 12px;
+        place-items: center;
     }
 
     #clearFilter {
@@ -758,8 +778,11 @@ select {
         color: #fff;
         background-color: #007bff;
         border-color: #007bff;
-        margin-right: 125px;
+        margin-left: 1245px;
+        margin-top: 39px;
         cursor: pointer;
+        position: absolute;
+        transform: translateY(-50%);
     }
     .buttonInfoAndChat {
         /* position: absolute;
@@ -772,15 +795,25 @@ select {
         margin-top: 279px;
     }
     .apiKeyContainer>p {
+        font-size: medium;
+        /* text-align: center;
+        line-height: 0.8; */
+        text-align: initial;
+        color: black;
+        position: absolute;
+        margin-left: 712px;
+        margin-top: 32px;
+        transform: translateY(-50%);
+        white-space: nowrap;
+        font-family: 'Inter', sans-serif;
+        font-weight: 700;
+    }
+    .textkeydesktop{
         margin: 0;
-        font-size: 8px;
+        font-size: 12px;
         text-align: center;
         line-height: 0.8;
         color: #266bb6;
-        position: absolute;
-        right: 95px;
-        top: 90%;
-        transform: translateY(-50%);
     }
     #showApiKeyDialog {
         fill: #007bff;
@@ -792,6 +825,21 @@ select {
         right: 95px;
         top: 85%;
         transform: translateY(-50%);
+    }
+    .iconKey{
+    fill: #007bff;
+    color: #007bff;
+    width: 45px;
+    height: 43px;
+    /* display: flex;
+    flex-direction: row-reverse;
+    flex-wrap: nowrap;
+    align-content: center;
+    justify-content: space-between; */
+    position: absolute;
+    margin-left: 720px;
+    margin-top: 5px;
+    transform: translateY(-50%);
     }
     #iconChatGroup {
         fill: #007bff;
@@ -813,8 +861,86 @@ select {
     }
     header{
         padding: 70px;
+
     }
     footer {
         padding:0rem;
+    }
+/* Estilos para Vista Shark */
+    #homeIcon {
+        fill: #007bff;
+        color: #007bff;
+        width: 45px;
+        height: 43px;
+        display: flex;
+        flex-direction: row-reverse;
+        flex-wrap: nowrap;
+        align-content: center;
+        justify-content: space-between;
+        margin-top: -12px;
+        margin-left: 15px;
+    }
+    #textHome {
+        margin-left: 13px;
+        font-size: 12px;
+        text-align: center;
+        line-height: 0.8;
+        color: #266bb6;
+    }
+
+    .infoContainer{
+        background-color: #DAD7D7; 
+        padding: 19px;
+        text-align: center;
+        height: 457px;
+        width: 1300px;
+        margin: 50px 160px 50px;
+    }
+    #imageShark {
+        margin: 25px;
+        width: 522px;
+        height: 400px;
+        border-radius: 5px;
+        flex-basis: 70px;
+        box-shadow: 3px 3px 2px rgb(0 0 0 / 18%);
+    }
+    
+    .dlStyle {
+        display: flex;
+        flex-wrap:wrap;
+        align-items: flex-start;
+        flex-wrap:initial;
+        padding: 0px;
+        justify-content: center;
+        border-radius: 5px;
+        background-color: #F5EEDC;
+    }
+    #nameShark {
+        margin: 5px 0px 3px 0;
+        margin-left: 20px;
+        margin-top: 80px;
+        font-size: 40px;
+        text-align: left;
+        color: #266bb6;
+    }
+    
+    #scientificName {
+        color: black;
+        text-align: left;
+        margin-top: 40px;
+        margin-left: 20px;
+        opacity: 0.7;
+        font-style: italic;
+        font-size: 25px;
+    }
+    
+    #textDescription {
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 20px;
+        color: black;
+        text-align: left;
+        margin: 0cap;
+        margin-left:20px ;
+        margin-top: 20px;
     }
 }
