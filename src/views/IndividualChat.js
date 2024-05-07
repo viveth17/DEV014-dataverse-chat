@@ -9,6 +9,7 @@ export default function IndividualChat(props) {
   //console.log('arreglo', shark.name);
   const viewEl = document.createElement('div');
   viewEl.innerHTML = `
+  <link rel="stylesheet" href="styleIndividualChat.css" />
     <section class="contentIcons">
     <div id="iconHome">
     <svg id="homeIcon"

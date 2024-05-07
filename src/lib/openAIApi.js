@@ -15,10 +15,10 @@ export const communicateWithOpenAI = (messages,id, apiKey) => {
     model: "gpt-3.5-turbo",
     messages: [
       { role: "user", content: messages },
-      { role:"system", content:`Responde en primera persona como si fueras el tiburón: ${id}`}
+      { role:"system", content:`Responde en primera persona y forma concisa como si fueras el tiburón: ${id}`}
     ],
     temperature: 0.7,
-    max_tokens: 50 // número máximo de tokens para generar
+    max_tokens: 40 // número máximo de tokens para generar
   };
 
   // Opciones de la solicitud
