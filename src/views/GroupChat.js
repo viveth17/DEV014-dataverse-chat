@@ -1,4 +1,4 @@
-// import { data } from '../data/dataset.js';
+import { data } from '../data/dataset.js';
 import { navigateTo } from '../router.js';
 import { setApiKey, getApiKey } from '../lib/apiKey.js';
 import { communicateWithOpenAI } from "../lib/openAIApi.js";
