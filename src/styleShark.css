@@ -1,0 +1,146 @@
+/* Estilos Vista Shark */
+body{
+    background-color: #DAD7D7;
+}
+.infoContainer{
+    /* background-color: #DAD7D7; */
+    padding: 19px;
+    text-align: center;
+    height: 514px;
+    width: 337px;
+}
+#imageShark {
+    margin: 15px;
+    width: 312px;
+    height: 266px;
+    border-radius: 5px;
+    flex-basis: 70px;
+    box-shadow: 3px 3px 2px rgb(0 0 0 / 18%);
+}
+
+.dlStyle {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    flex-direction: row;
+    padding: 0px;
+    justify-content: center;
+    border-radius: 5px;
+    background-color: #F5EEDC;
+}
+
+#textDescription {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    color: black;
+    text-align: left;
+    margin: 0cap;
+    margin:5px 10px 10px 10px ;
+    /* margin-left: 10px;
+    margin-left: 22px;
+    margin-top: 5px;
+    margin-bottom: 2px; */
+}
+
+/* #footerShark {
+    margin-top: 55px;
+} */
+
+#nameShark {
+    margin: 5px 0px 3px 0;
+    margin-left: 10px;
+    font-size: 16px;
+    text-align: left;
+    color: #266bb6;
+}
+
+#scientificName {
+    color: black;
+    text-align: left;
+    margin: 0 0 5px 0;
+    margin-left: 10px;
+    opacity: 0.7;
+    font-style: italic;
+}
+
+@media (min-width : 900px) {
+    /* Estilos para Vista Shark */
+    
+    #homeIcon {
+        fill: #007bff;
+        color: #007bff;
+        width: 45px;
+        height: 43px;
+        display: flex;
+        flex-direction: row-reverse;
+        flex-wrap: nowrap;
+        align-content: center;
+        justify-content: space-between;
+        margin-top: -12px;
+        margin-left: 15px;
+    }
+    #textHome {
+        margin-left: 13px;
+        font-size: 12px;
+        text-align: center;
+        line-height: 0.8;
+        color: #266bb6;
+    }
+
+    .infoContainer{
+        background-color: F5EEDC;
+        padding: 19px;
+        text-align: center;
+        height: 457px;
+        width: 1300px;
+        margin: 50px 160px 50px;
+    }
+    #imageShark {
+        margin: 22px;
+        width: 540px;
+        height: 425px;
+        border-radius: 5px;
+        flex-basis: 70px;
+        box-shadow: 3px 3px 2px rgb(0 0 0 / 18%);
+    }
+    
+    .dlStyle {
+        display: flex;
+        flex-wrap:wrap;
+        align-items: flex-start;
+        flex-wrap:initial;
+        padding: 0px;
+        justify-content: center;
+        border-radius: 5px;
+        background-color: #F5EEDC;
+        width: 1130px;
+        height: 470px;
+        margin: 0px -70px;
+    }
+    #nameShark {
+        margin-left: 20px;
+        margin-top: 40px;
+        font-size: 40px;
+        text-align: left;
+        color: #266bb6;
+    }
+    
+    #scientificName {
+        color: black;
+        text-align: left;
+        margin-top: 20px;
+        margin-left: 20px;
+        opacity: 0.7;
+        font-style: italic;
+        font-size: 25px;
+    }
+    
+    #textDescription {
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 20px;
+        color: black;
+        text-align: justify;
+        margin: 20px 40px 20px 20px;
+    }
+    
+}

@@ -12,6 +12,7 @@ export default function Shark(props) {
     liElement.setAttribute("itemscope", "");
     liElement.innerHTML =
       viewEl.innerHTML = `
+      <link rel="stylesheet" href="styleShark.css" />
       <section class="contentIcons">
       <div id="iconHome">
       <svg id="homeIcon"

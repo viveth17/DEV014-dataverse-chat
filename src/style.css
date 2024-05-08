@@ -126,7 +126,7 @@ h2 {
 
 .actionsContainer {
     display: flex;
-    gap: 4px;
+    /* gap: 4px; */
     place-items: center;
 }
 
@@ -150,7 +150,7 @@ body {
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
-    color: #FFFFFF;
+    color: #F5EEDC;
     height: 100%;
     margin: 0;
 }
@@ -185,6 +185,28 @@ select {
     border-color: #007bff;
     font-weight: 600;
 }
+.iconKey {
+    fill: #007bff;
+    color: #007bff;
+    width: 38px;
+    height: 42px;
+    display: flex;
+    flex-direction: row-reverse;
+    flex-wrap: nowrap;
+    align-content: center;
+    justify-content: space-between;
+}
+.texApiKeyIcon {
+    margin: 0;
+    color: black;
+    font-family: 'Inter', sans-serif;
+    font-size: 11px;
+    font-weight: 500;
+}
+/* .apiKeyContainer {
+    display: flex;
+    flex-direction: column;
+} */
 
 #clearFilter {
     padding: 5px;
@@ -217,20 +239,6 @@ select {
     border-color: #007bff;
     cursor: pointer;
     font-size: 10px;
-}
-
-.apiKeyContainer {
-    display: flex;
-    flex-direction: column;
-}
-
-.apiKeyContainer>p {
-    margin: 0;
-    font-size: 11px;
-    text-align: center;
-    line-height: 0.8;
-    color: black;
-    font-family: 'Inter', sans-serif;
 }
 
 #showApiKeyDialog {
@@ -373,68 +381,6 @@ select {
     font-weight: 600;
 }
 
-/* Estilos Vista Shark */
-.infoContainer{
-    background-color: #DAD7D7;
-    padding: 19px;
-    text-align: center;
-    height: 514px;
-    width: 337px;
-}
-#imageShark {
-    margin: 15px;
-    width: 312px;
-    height: 266px;
-    border-radius: 5px;
-    flex-basis: 70px;
-    box-shadow: 3px 3px 2px rgb(0 0 0 / 18%);
-}
-
-.dlStyle {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: flex-start;
-    flex-direction: row;
-    padding: 0px;
-    justify-content: center;
-    border-radius: 5px;
-    background-color: #F5EEDC;
-}
-
-#textDescription {
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 12px;
-    color: black;
-    text-align: left;
-    margin: 0cap;
-    margin:5px 10px 10px 10px ;
-    /* margin-left: 10px;
-    margin-left: 22px;
-    margin-top: 5px;
-    margin-bottom: 2px; */
-}
-
-/* #footerShark {
-    margin-top: 55px;
-} */
-
-#nameShark {
-    margin: 5px 0px 3px 0;
-    margin-left: 10px;
-    font-size: 16px;
-    text-align: left;
-    color: #266bb6;
-}
-
-#scientificName {
-    color: black;
-    text-align: left;
-    margin: 0 0 5px 0;
-    margin-left: 10px;
-    opacity: 0.7;
-    font-style: italic;
-}
-
 /* ESTILOS PARA INDIVIDUAL CHAT  */
 #viewIndividualChat {
     background-image: url("https://i.ibb.co/7j0dKxx/Rectangle-47-1.png");
@@ -462,18 +408,6 @@ select {
     color: #2672c4;
     width: 45px;
     height: 43px;
-}
-
-.iconKey {
-    fill: #007bff;
-    color: #007bff;
-    width: 38px;
-    height: 42px;
-    display: flex;
-    flex-direction: row-reverse;
-    flex-wrap: nowrap;
-    align-content: center;
-    justify-content: space-between;
 }
 
 #homeIcon {
@@ -627,27 +561,46 @@ select {
 
 
 
-@media (min-width : 1200px) {
+@media (min-width : 900px) {
     body {
         background-color: rgb(209, 206, 206);
     }
 
+    h1 {
+        font-size: 64px;
+        margin-top: -30px;
+    }
+
+    h2 {
+        font-size: 32px;
+    }
+
+    div {
+        align-self: start;
+        margin-left: 0px;
+        margin-top: 5px;
+    }
     .card {
         /* width: 424px;
         height: 424px;
         font-size: 20px; */
-        width: 500px;
+        /* width: 500px;
+        height: 440px; */
+        width: 420px;
         height: 440px;
         font-size: 20px;
+        flex-wrap: wrap;
+        display: flex;
     }
 
     img {
         /* width: 386px;
         height: 253px;
         flex-basis: auto; */
-        width: 440px;
+        width: 400px;
         height: 260px;
         flex-basis: auto;
+        margin: 5px 10px 10px 10px;
     }
 
     dl {
@@ -657,7 +610,7 @@ select {
     }
 
     h3 {
-        font-size: 20px;
+        font-size: 18px;
         margin-left: 20px;
  
     }
@@ -672,30 +625,49 @@ select {
         font-family: Arial, Helvetica, sans-serif;
         margin-left: 20px
     }
-
-    h1 {
-        font-size: 64px;
-        margin: 0px;
-    }
-
-    h2 {
-        font-size: 32px;
-    }
-
-    div {
-        align-self: start;
-        margin-left: 0px;
-        margin-top: 5px;
-    }
-
-    footer {
-        height: 97px;
-    }
-
     .p {
         font-size: 24px;
     }
 
+    section {
+        background: #F5EEDC;
+        padding: 1rem 0;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        margin: 0 4%;
+    }
+
+    label {
+        font-family: 'Inter', sans-serif;
+        color: black;
+        font-size: medium;
+        font-weight: 700;
+        /* margin-right: 15px; */
+        margin-left: 15px;
+    }
+
+    select {
+        padding: 5px;
+        display: inline-flex;
+        gap: 500px;
+        text-align: left;
+        background-color: rgb(250, 249, 249);
+        border-radius: 5px;
+        font-size: medium;
+        font-family: sans-serif;
+        margin-left: 15px;
+        
+    }
+    #longevityText {
+        font-family: 'Inter', sans-serif;
+        color: black;
+        font-size: medium;
+        font-weight: 700;
+        margin-right: 140px;
+        margin-left: 10px;
+        position: relative;
+    }
     .longevity {
         display: flex;
         flex-direction: row;
@@ -720,53 +692,7 @@ select {
         border-color: #007bff;
         cursor: pointer;
         /* margin-right: 20 px; */
-        margin-left: -118px;
-    }
-
-    #longevityText {
-        font-family: 'Inter', sans-serif;
-        color: black;
-        font-size: medium;
-        font-weight: 700;
-        margin-right: 124px;
-        margin-left: 49px;
-        position: relative;
-    }
-
-    section {
-        background: #F5EEDC;
-        padding: 1rem 0;
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        margin: 0 4%;
-    }
-
-    label {
-        font-family: 'Inter', sans-serif;
-        color: black;
-        font-size: medium;
-        font-weight: 700;
-        /* margin-right: 15px; */
-        margin-left: 45px;
-    }
-
-    select {
-        padding: 5px;
-        display: inline-flex;
-        gap: 500px;
-        text-align: left;
-        background-color: rgb(250, 249, 249);
-        border-radius: 5px;
-        font-size: medium;
-        font-family: sans-serif;
-        margin-left: 42px;
-        
-    }
-    .actionsContainer {
-        display: flex;
-        gap: 12px;
-        place-items: center;
+        margin-left: -121px;
     }
 
     #clearFilter {
@@ -778,43 +704,46 @@ select {
         color: #fff;
         background-color: #007bff;
         border-color: #007bff;
-        margin-left: 1245px;
-        margin-top: 39px;
         cursor: pointer;
-        position: absolute;
-        transform: translateY(-50%);
+        margin-left: 15px;
+
+        /* margin-right: 20 px;
+        margin-left: -118px; */
     }
-    .buttonInfoAndChat {
-        /* position: absolute;
-        margin-left: 135px;
-        margin-top: 97px; */
-        position: absolute;
-        /* margin-left: 300px;
-        margin-top: 370px; */
-        margin-left: 339px;
-        margin-top: 279px;
+    
+    .iconKey {
+        fill: #007bff;
+        color: #007bff;
+        width: 45px;
+        height: 43px;
+        /* display: flex;
+        flex-direction: row-reverse;
+        flex-wrap: nowrap;
+        align-content: center;
+        justify-content: space-between; */
+        margin-left: 25px;
+        margin-top: -35px;
+        cursor: pointer;
     }
-    .apiKeyContainer>p {
+    .texApiKeyIcon {
         font-size: medium;
         /* text-align: center;
         line-height: 0.8; */
-        text-align: initial;
+        /* text-align: initial; */
         color: black;
-        position: absolute;
-        margin-left: 712px;
+        margin-left: -50px;
         margin-top: 32px;
-        transform: translateY(-50%);
-        white-space: nowrap;
+        /* white-space: nowrap; */
         font-family: 'Inter', sans-serif;
         font-weight: 700;
     }
-    .textkeydesktop{
+    /* .textkeydesktop{
         margin: 0;
         font-size: 12px;
         text-align: center;
         line-height: 0.8;
         color: #266bb6;
-    }
+    } */
     #showApiKeyDialog {
         fill: #007bff;
         color: #2672c4;
@@ -826,21 +755,7 @@ select {
         top: 85%;
         transform: translateY(-50%);
     }
-    .iconKey{
-    fill: #007bff;
-    color: #007bff;
-    width: 45px;
-    height: 43px;
-    /* display: flex;
-    flex-direction: row-reverse;
-    flex-wrap: nowrap;
-    align-content: center;
-    justify-content: space-between; */
-    position: absolute;
-    margin-left: 720px;
-    margin-top: 5px;
-    transform: translateY(-50%);
-    }
+    
     #iconChatGroup {
         fill: #007bff;
         color: #2672c4;
@@ -859,88 +774,41 @@ select {
         box-shadow: 0 0 2px #888;
         padding: 0.5em 0.6em;
     }
+    .buttonInfoAndChat {
+        /* position: absolute;
+        margin-left: 135px;
+        margin-top: 97px; */
+        position: absolute;
+        /* margin-left: 300px;
+        margin-top: 370px; */
+        margin-left: 277px;
+        margin-top: 273px;
+    }
+    
+    #moreInfo {
+        background-color: rgb(250, 249, 249);
+        border-radius: 5px;
+        font-size: medium;
+        font-family: sans-serif;
+        border-color: #007bff;
+        font-weight: 600;
+        padding: 5px;
+    }
+    #individualChat {
+        background-color: rgb(250, 249, 249);
+        border-radius: 5px;
+        font-size: medium;
+        font-family: sans-serif;
+        border-color: #007bff;
+        font-weight: 600;
+        padding: 5px;
+    }
     header{
-        padding: 70px;
+        padding: 50px;
 
     }
     footer {
         padding:0rem;
-    }
-/* Estilos para Vista Shark */
-    #homeIcon {
-        fill: #007bff;
-        color: #007bff;
-        width: 45px;
-        height: 43px;
-        display: flex;
-        flex-direction: row-reverse;
-        flex-wrap: nowrap;
-        align-content: center;
-        justify-content: space-between;
-        margin-top: -12px;
-        margin-left: 15px;
-    }
-    #textHome {
-        margin-left: 13px;
-        font-size: 12px;
-        text-align: center;
-        line-height: 0.8;
-        color: #266bb6;
-    }
-
-    .infoContainer{
-        background-color: #DAD7D7; 
-        padding: 19px;
-        text-align: center;
-        height: 457px;
-        width: 1300px;
-        margin: 50px 160px 50px;
-    }
-    #imageShark {
-        margin: 25px;
-        width: 522px;
-        height: 400px;
-        border-radius: 5px;
-        flex-basis: 70px;
-        box-shadow: 3px 3px 2px rgb(0 0 0 / 18%);
-    }
-    
-    .dlStyle {
-        display: flex;
-        flex-wrap:wrap;
-        align-items: flex-start;
-        flex-wrap:initial;
-        padding: 0px;
-        justify-content: center;
-        border-radius: 5px;
-        background-color: #F5EEDC;
-    }
-    #nameShark {
-        margin: 5px 0px 3px 0;
-        margin-left: 20px;
-        margin-top: 80px;
-        font-size: 40px;
-        text-align: left;
-        color: #266bb6;
-    }
-    
-    #scientificName {
-        color: black;
-        text-align: left;
-        margin-top: 40px;
-        margin-left: 20px;
-        opacity: 0.7;
-        font-style: italic;
-        font-size: 25px;
-    }
-    
-    #textDescription {
-        font-family: Arial, Helvetica, sans-serif;
-        font-size: 20px;
-        color: black;
-        text-align: left;
-        margin: 0cap;
-        margin-left:20px ;
-        margin-top: 20px;
+        height: 60px;
     }
 }
