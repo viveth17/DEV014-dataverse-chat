@@ -3,7 +3,8 @@ import { navigateTo } from '../router.js';
 import { setApiKey, getApiKey } from '../lib/apiKey.js';
 import { communicateWithOpenAI } from "../lib/openAIApi.js";
 
-export default function GroupChat(props) {
+export default function GroupChat() {
+
   const viewEl = document.createElement('div');
   viewEl.innerHTML = `
   <link rel="stylesheet" href="styleGroupChat.css" />
@@ -72,24 +73,20 @@ export default function GroupChat(props) {
   </main>
   `
 
-  // evento icon Home
   const buttonHome = viewEl.querySelector("#homeIcon");
   buttonHome.addEventListener("click", () => {
     navigateTo("/");
   });
 
-  // // evento icon key
-  // Agregando la funcionalidad de la ventana emergente
   const showApiKeyDialogButton = viewEl.querySelector('#apiKeyIcon');
   const apiKeyDialog = viewEl.querySelector('#apiKeyDialog');
-  // Muestra el dialogo al hacer click en la imagen de la llave
+
   showApiKeyDialogButton.addEventListener('click', () => {
     if (apiKeyDialog) {
       apiKeyDialog.showModal();
     }
   });
 
-  //cerrar el dialogo al hacer click en la "X"
   const closeApiKeyDialogButton = viewEl.querySelector('#closeApiKeyDialog');
   if (closeApiKeyDialogButton) {
     closeApiKeyDialogButton.addEventListener('click', () => {
@@ -98,65 +95,64 @@ export default function GroupChat(props) {
       }
     });
   }
-  //Guardar la API KEY al hacer click en el botón de "Guardar API KEY"
   const saveApiKeyButton = viewEl.querySelector('#saveApiKeyButton');
   if (saveApiKeyButton) {
 
     saveApiKeyButton.addEventListener('click', () => {
       const apiKeyInput = viewEl.querySelector('#apiKeyInput');
-      const apiKey = apiKeyInput.value.trim(); // Obtener y limpiar el valor de la API KEY
-      // Implementar lógica para guardar y utilizar la API KEY aquí
+      const apiKey = apiKeyInput.value.trim();
 
       setApiKey(apiKey);
-      // console.log('API KEY ingresada:', apiKey);
-      // Limpiar el input después de guardar la API KEY
+
       apiKeyInput.value = '';
 
-      // Cerrar el diálogo después de guardar la API KEY
       if (apiKeyDialog) {
         apiKeyDialog.close();
       }
     });
   }
 
-  
-  //evento icon "enviar"
   const buttonSend = viewEl.querySelector("#iconSends");
   buttonSend.addEventListener("click", () => {
-  //para obtener campo de texto ingresado por el usuario
     const wordsUser = viewEl.querySelector("#input-message").value;
-    // console.log('texto en el input:', wordsUser);
-     
-    // //Invocar funcion para comunicar con Open IA (pasando el texto ingresado por el usuario)
-    const apiKey = getApiKey();
-    communicateWithOpenAI(wordsUser, props.id, apiKey).then(Response => {
-      //crear y mostrar las respuestas de OpenAI//
-      const viewChat = document.createElement('div');
-      //console.log('palabras x el usuario', wordsUser);
-      viewChat.innerHTML = `
-      <div class="user-response">
-        <span class="wordsuser"> ${wordsUser} </span>
-        </div>
+
+
+    const viewChat = document.createElement('div');
+    viewChat.innerHTML = `
+    <div class="user-response">
+      <span class="wordsuser"> ${wordsUser} </span>
+      </div>
     `
-      viewEl.querySelector(".response-container").appendChild(viewChat);
-      // viewEl.appendChild(viewChat);
-      //console.log("responOpenia", Response.choices[0].message.content);
-      // obtener la respuesta de openAI
-      const viewChatOpenIa = document.createElement('div');
-      viewChatOpenIa.innerHTML = `
-    <div class="ai-response">
-    <span class="responsemessage">
-    ${Response.choices[0].message.content}
-    </span>
-  </div>
-  `
-      viewEl.querySelector(".response-container").appendChild(viewChatOpenIa);
+    viewEl.querySelector(".response-container").appendChild(viewChat);
 
-      // Limpiar el contenido del input despues de enviar
-      const inputMessage = viewEl.querySelector("#input-message");
-      inputMessage.value = "";
+    const apiKey = getApiKey();
 
-    })
+
+    const promiseSharks = data.map(function (shark) {
+      return communicateWithOpenAI(wordsUser, shark.id, apiKey).then(response => {
+        return response.choices[0].message.content
+      })
+    });
+    console.log("promiseSharks", promiseSharks)
+    Promise.all(promiseSharks)
+      .then((response) => {
+        response.forEach(element => {
+          const viewChatOpenIa = document.createElement('div');
+          viewChatOpenIa.innerHTML = `
+          <div class="ai-response">
+          <span class="responsemessage">
+          ${element}
+          </span>
+        </div>
+        `
+          viewEl.querySelector(".response-container").appendChild(viewChatOpenIa);
+          const inputMessage = viewEl.querySelector("#input-message");
+          inputMessage.value = "";
+        });
+      });
+
+
+
   });
   return viewEl;
 }
