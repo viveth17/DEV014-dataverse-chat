@@ -6,6 +6,13 @@ import { communicateWithOpenAI } from "../lib/openAIApi.js";
 export default function GroupChat() {
 
   const viewEl = document.createElement('div');
+  data.map(shark => {
+    viewEl.innerHTML += `
+      <div class="containerMenuChat">
+        <img class="imgenChatGroup" src="${shark.imageUrl}" alt="imagen tiburon">
+      </div>
+    `;
+  });
   viewEl.innerHTML = `
   <link rel="stylesheet" href="styleGroupChat.css" />
     <section class="contentIcons">
@@ -41,11 +48,11 @@ export default function GroupChat() {
   </div>
     </section>
   <main>
+  <div class="menu">
+  ${viewEl.innerHTML}
+  </div>
     <div id="root"></div>
     <div id="bodyChat">
-    <div class="menu"> 
-    <h4 class="online">Online </h4>
-    </div>
     </div>
     <div class="response-container">
     </div>
@@ -72,7 +79,6 @@ export default function GroupChat() {
 </dialog>
   </main>
   `
-
   const buttonHome = viewEl.querySelector("#homeIcon");
   buttonHome.addEventListener("click", () => {
     navigateTo("/");
@@ -129,11 +135,11 @@ export default function GroupChat() {
 
 
     const promiseSharks = data.map(function (shark) {
-      return communicateWithOpenAI(wordsUser, shark.id, apiKey).then(response => {
+      return communicateWithOpenAI(wordsUser, shark.id, apiKey, shark.name).then(response => {
         return response.choices[0].message.content
       })
     });
-    console.log("promiseSharks", promiseSharks)
+    //console.log("promiseSharks", promiseSharks)
     Promise.all(promiseSharks)
       .then((response) => {
         response.forEach(element => {

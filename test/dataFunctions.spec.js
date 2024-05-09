@@ -1,6 +1,6 @@
 import { computeStats, filterData } from '../src/lib/dataFunctions.js';
 import { sortBySharkSize } from '../src/lib/dataFunctions.js';
-import { data } from '../src/data/dataset.js';
+import { data } from './data.js';
 
 
 describe('filterData', () => {

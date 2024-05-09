@@ -1,9 +1,9 @@
 // import { getApiKey } from './apiKey.js';
 
 
-export const communicateWithOpenAI = (messages,id, apiKey) => {
-  console.log('nombre por id',id);
-//Aquí es donde debes implementar la petición con fetch o axios
+export const communicateWithOpenAI = (messages,id, apiKey,) => {
+  //console.log('nombre por id',id);
+  //Aquí es donde debes implementar la petición con fetch o axios
   // Obtener la clave de API
   // apiKey = getApiKey();
   // URL de la API de OpenAI
