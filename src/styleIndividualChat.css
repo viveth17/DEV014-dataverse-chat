@@ -85,11 +85,14 @@
     color: #266bb6;
 }
 
-#bodyChat {
+main {
     background-image: url(https://i.ibb.co/7j0dKxx/Rectangle-47-1.png);
-    width: 100%;
-    height: 100%;
+    background-size: contain;
     background-repeat: round;
+    width: 100%;
+    display: grid;
+    height: calc(100vh - 70px);
+    grid-template-rows: max-content 1fr max-content;
 }
 
 .sharkImg {
@@ -109,7 +112,7 @@
     height: 40px;
     width: calc(100% - 80px);
     padding-left: 1rem; */
-    margin-top: 456px;
+    margin-top: 0;
     border-radius: 3rem;
     border: none;
     box-shadow: inset 0px 0px 4px #d48a05;
@@ -160,7 +163,7 @@
     padding: 5px 10px;
     border-radius: 20px;
     text-align: start;
-    /* width: max-content; */
+    width: max-content;
 }
 
 .ai-response {
@@ -222,7 +225,7 @@
 
 
 
-@media (min-width : 1200px) {
+@media (min-width : 900px) {
 
 /* VISTA CHAT INDIVIDUAL DESKTOP */
 .contentIcons {
@@ -234,7 +237,7 @@
     align-items: flex-end;
     justify-content: space-between;
     align-content: stretch;
-    padding: 1rem 0;
+    padding: 1rem 15px;
     margin: 0 0%;
 }
 
@@ -270,17 +273,6 @@
     justify-content: space-between;
 }
 
-#textKey {
-    position: absolute;
-    margin: 0;
-    font-size: 12px;
-    text-align: center;
-    line-height: 0.8;
-    color: #266bb6;
-    right: 712px;
-    top: 11%;
-    transform: translateY(-130%);
-}
 
 #iconChatG {
     fill: #007bff;
@@ -294,38 +286,17 @@
     justify-content: space-between;
 }
 
-.menu {
-    display: grid;
-    grid-template-columns: 80px 1fr;
-    padding: 0px 10px 0;
-    background-color: #dee4eb;
-    border-top: 2px solid #cfcfcf;
-    border-bottom: 2px solid #cfcfcf;
-    column-gap: 8px;
-    box-shadow: 0px 16px 6px 1px rgb(174 174 174 / 55%);
-    margin-left: 0px;
-    margin-top: 5px;
-}
-
 .message-input {
-    margin-top: 472px;
+    margin-top: 0;
     border-radius: 3rem;
     border: none;
-    box-shadow: inset 0px 0px 4px rgba(0, 0, 0, 0.5);
-    height: 57px;
+    box-shadow: inset 0px 0px 4px #d48a05;
+    height: 40px;
     width: calc(100% - 80px);
     padding-left: 1rem;
-    font-size: 23px;
-}
-
-#iconSends {
-    position: absolute;
-    bottom: 16px;
-    transform: translateX(-57px);
-    width: 46px;
-    height: 46px;
-    fill: #007bff;
-    color: #007bff;
+    margin-left: 8px;
+    margin-bottom: 10px;
+    font-size: 18px;
 }
 
 .sharkImg {
@@ -368,18 +339,6 @@
     margin-left: 0;
     margin-top: 5px;
 }
-.user-response {
-    /* background-color: #52a2f9;
-    padding: 5px 10px;
-    border-radius: 5px;
-    margin-right: 50%; */
-    margin: 10px 32px 10px 5px;
-    background-color: #52a2f9;
-    padding: 5px 10px;
-    border-radius: 20px;
-    text-align: start;
-    width: max-content;
-}
 
 .ai-response {
     /* background-color: #e0e0e0;
@@ -393,4 +352,10 @@
     text-align: start;
     width: max-content;
 }
+
+div {
+    margin-top: 0;
+    align-self: auto;
+}
+
 }

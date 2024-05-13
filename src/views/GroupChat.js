@@ -50,22 +50,16 @@ export default function GroupChat() {
   <main>
   <div class="menu">
   ${viewEl.innerHTML}
-  </div>
-    <div id="root"></div>
-    <div class="imageBackground">
-
-    </div>
+  </div> 
     <div class="response-container">
     </div>
     <div class="imgContentChat">
-    <form class="flex-Input">
     <div class="input-container">
     <input  id="input-message" class="message-input" type="text" placeholder="Pregunta a estos tiburones parlantes">
     <svg id="iconSends" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right-circle" viewBox="0 0 16 16">
   <path fill-rule="evenodd" d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8m15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0M4.5 7.5a.5.5 0 0 0 0 1h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5z"/>
 </svg>
 </div>
-    </form>
     </div>
     <!--Dialogo para ingresar la API KEY-->
   <dialog id="apiKeyDialog">
@@ -120,9 +114,9 @@ export default function GroupChat() {
   }
 
   const buttonSend = viewEl.querySelector("#iconSends");
+  const inputText = viewEl.querySelector(".message-input");
   buttonSend.addEventListener("click", () => {
     const wordsUser = viewEl.querySelector("#input-message").value;
-
 
     const viewChat = document.createElement('div');
     viewChat.innerHTML = `
@@ -194,6 +188,8 @@ export default function GroupChat() {
           viewEl.querySelector(".response-container").appendChild(viewChatOpenIa);
           const inputMessage = viewEl.querySelector("#input-message");
           inputMessage.value = "";
+          // Scroll hacia el último mensaje
+          viewEl.querySelector(".response-container").scrollTo(0, viewEl.querySelector(".response-container").scrollHeight);
         });
       });
 
@@ -202,6 +198,90 @@ export default function GroupChat() {
 
 
 
+
+  });
+
+  inputText.addEventListener("keydown", function (event) {
+    if (event.key === "Enter") {
+
+      const wordsUser = viewEl.querySelector("#input-message").value;
+
+      const viewChat = document.createElement('div');
+      viewChat.innerHTML = `
+    <div class="user-response">
+      <span class="wordsuser"> ${wordsUser} </span>
+      </div>
+    `
+      viewEl.querySelector(".response-container").appendChild(viewChat);
+
+      const apiKey = getApiKey();
+
+
+      const promiseSharks = data.map(function (shark) {
+        return communicateWithOpenAI(wordsUser, shark.id, apiKey, shark.name).then(response => {
+          return response.choices[0].message.content
+        })
+      });
+      //console.log("promiseSharks", promiseSharks)
+      // Promise.all(promiseSharks)
+      //   .then((response) => {
+      //     response.forEach(element => {
+      //       const viewChatOpenIa = document.createElement('div');
+      //       viewChatOpenIa.innerHTML = `
+      //       <div class="ai-response">
+      //       <span class="responsemessage">
+      //       ${element}
+      //       </span>
+      //     </div>
+      //     `
+      //       viewEl.querySelector(".response-container").appendChild(viewChatOpenIa);
+      //       const inputMessage = viewEl.querySelector("#input-message");
+      //       inputMessage.value = "";
+      //     });
+      //   });
+
+      Promise.all(promiseSharks)
+        .then((responses) => {
+          responses.forEach((response, index) => {
+            const shark = data[index];
+            const viewChatOpenIa = document.createElement('div');
+            viewChatOpenIa.innerHTML = `
+          <div class="ai-response">
+          <div class="res">
+          <p class="nameResponse"> ${shark.name} </p>
+          <svg class="colorReloj"
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path d="M9 7H11V12H16V14H9V7Z" fill="currentColor" />
+          <path
+            fill-rule="evenodd"
+            clip-rule="evenodd"
+            d="M22 12C22 17.5228 17.5228 22 12 22C6.47715 22 2 17.5228 2 12C2 6.47715 6.47715 2 12 2C17.5228 2 22 6.47715 22 12ZM20 12C20 16.4183 16.4183 20 12 20C7.58172 20 4 16.4183 4 12C4 7.58172 7.58172 4 12 4C16.4183 4 20 7.58172 20 12Z"
+            fill="currentColor"
+          />
+        </svg>
+          <p class="text-muted small mb-0"><i class="far fa-clock"></i> 12 mins ago</p>
+          <i class="far fa-clock"></i> 
+          </p>
+          </div>
+            <span class="responsemessage">
+              ${response}
+            </span>
+          </div>
+        `;
+            viewEl.querySelector(".response-container").appendChild(viewChatOpenIa);
+            const inputMessage = viewEl.querySelector("#input-message");
+            inputMessage.value = "";
+            // Scroll hacia el último mensaje
+            viewEl.querySelector(".response-container").scrollTo(0, viewEl.querySelector(".response-container").scrollHeight);
+          });
+        });
+
+    }
   });
   return viewEl;
 }

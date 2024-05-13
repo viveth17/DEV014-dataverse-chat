@@ -13,6 +13,8 @@
     align-items: flex-end;
     justify-content: space-between;
     align-content: stretch;
+    padding: 15px 10px;
+    margin: 0;
 }
 
 #iconChatG {
@@ -100,11 +102,18 @@
 } */
 
 main {
-    background-image: url(https://i.ibb.co/7j0dKxx/Rectangle-47-1.png);
+    /* background-image: url(https://i.ibb.co/7j0dKxx/Rectangle-47-1.png);
     width: 100%;
     background-repeat: round;
     display: grid;
+    height: calc(100vh - 70px); */
+    background-image: url(https://i.ibb.co/7j0dKxx/Rectangle-47-1.png);
+    background-size: contain;
+    background-repeat: round;
+    width: 100%;
+    display: grid;
     height: calc(100vh - 70px);
+    grid-template-rows: max-content 1fr max-content;
 }
 
 .sharkImg {
@@ -164,7 +173,10 @@ main {
 
 .response-container {
     /* margin: 0 0 10px; */
+    /* overflow-y: scroll; */
     overflow-y: scroll;
+    scroll-behavior: smooth;
+    margin: 0 0 10px;
 }
 
 .user-response {
@@ -257,10 +269,8 @@ main {
 .menu {
     /* display: flex;
     flex-direction: row;
-    Para que las imágenes se envuelvan si no hay suficiente espacio */
-    /* justify-content: flex-start;
-    /* Alinear las imágenes a la izquierda */
-    /* overflow-x: scroll;
+    justify-content: flex-start;
+    overflow-x: scroll;
     background-color: #fff0; */
     display: flex;
     flex-direction: row;
@@ -285,42 +295,17 @@ main {
 }
 
 
-
-@media (min-width : 1200px) {
+@media (min-width : 900px) {
 
     /* VISTA CHAT INDIVIDUAL DESKTOP */
-    .contentIcons {
-        display: flex;
-        flex-direction: row;
-        flex-wrap: nowrap;
-        height: 40px;
-        background: #F5EEDC;
-        align-items: flex-end;
-        justify-content: space-between;
-        align-content: stretch;
-        padding: 1rem 0;
-        margin: 0 0%;
-    }
-
-    #homeIcon {
-        fill: #007bff;
-        color: #007bff;
-        width: 43px;
-        height: 40px;
-        display: flex;
-        flex-direction: row-reverse;
-        flex-wrap: nowrap;
-        align-content: center;
-        justify-content: space-between;
-    }
-
+/* 
     #textHome {
         margin: 0;
         font-size: 12px;
         text-align: center;
         line-height: 0.8;
         color: #266bb6;
-    }
+    } */
 
     #apiKeyIcon {
         fill: #007bff;
@@ -332,18 +317,6 @@ main {
         flex-wrap: nowrap;
         align-content: center;
         justify-content: space-between;
-    }
-
-    #textKey {
-        position: absolute;
-        margin: 0;
-        font-size: 12px;
-        text-align: center;
-        line-height: 0.8;
-        color: #266bb6;
-        right: 0px;
-        top: 11%;
-        transform: translateY(-130%);
     }
 
     #iconChatG {
@@ -376,16 +349,7 @@ main {
         padding-left: 1rem;
         margin-left: 8px;
         margin-bottom: 10px;
-    }
-
-    #iconSends {
-        position: absolute;
-        bottom: 16px;
-        transform: translateX(-57px);
-        width: 46px;
-        height: 46px;
-        fill: #007bff;
-        color: #007bff;
+        font-size: 18px;
     }
 
     /* 
@@ -428,19 +392,6 @@ main {
         position: relative;
         margin-left: 0;
         margin-top: 5px;
-    }
-
-    .user-response {
-        /* background-color: #52a2f9;
-    padding: 5px 10px;
-    border-radius: 5px;
-    margin-right: 50%; */
-        margin: 10px 5px 10px 32px;
-        background-color: #52a2f9;
-        padding: 5px 10px;
-        border-radius: 20px;
-        text-align: start;
-        width: max-content;
     }
 
     .ai-response {
@@ -494,12 +445,17 @@ main {
     
     .nameResponse {
         font-weight: 700 !important;
-        font-size: 15px;
+        font-size: 16px;
     }
     
     .colorReloj {
         fill: #007bff;
         color: #007bff;
+    }
+
+    div {
+        margin-top: 0;
+        align-self: auto;
     }
     
 }
