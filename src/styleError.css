@@ -1,0 +1,61 @@
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f0f0f0;
+    font-family: Arial, sans-serif;
+}
+
+.titleError {
+    font-size: 24px;
+    text-align: center;
+    margin-bottom: 15px;
+    color: purple;
+}
+
+.subtitleError {
+    font-size: 18px;
+    text-align: center;
+    margin-bottom: 15px;
+    color: purple;
+}
+
+.sharkError {
+    text-align: center;
+}
+
+.sharkError img {
+    max-width: 100%;
+    height: auto;
+}
+
+#backHome {
+
+    border-radius: 10px;
+    color: white;
+    background: purple;
+    margin: 5px 112px;
+    font-size: 17px;
+    cursor: pointer;
+
+}
+
+@media (min-width: 900px) {
+    .titleError {
+        font-size: 36px;
+    }
+
+    .subtitleError {
+        font-size: 24px;
+    }
+
+    #backHome {
+
+        margin: 5px 150px;
+        font-size: 25px;
+
+    }
+}

@@ -8,14 +8,14 @@ export const setRootEl = (el) => {
 }
 
 export const setRoutes = (routes) => {
-  // if (typeof routes !== "object") {
-  //   throw new Error("This is not an object");
-  // }
-  // if (!routes["/error"]) {
-  //   throw new Error(
-  //     "Routes must define an /error route with a function handler"
-  //   );
-  // }
+  if (typeof routes !== "object") {
+    throw new Error("This is not an object");
+  }
+  if (!routes["/error"]) {
+    throw new Error(
+      "Routes must define an /error route with a function handler"
+    );
+  }
   ROUTES = routes;
   // optional Throw errors if routes isn't an object
   // optional Throw errors if routes doesn't define an /error route
