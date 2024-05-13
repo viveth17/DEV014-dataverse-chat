@@ -13,6 +13,28 @@ describe('setApiKey', () => {
     //afirmaciones
     expect(obtainedApiKey).toEqual(apiKey);
   });
+
+  it('debería manejar el caso de clave API incorrecta', () => {
+    // Guardar el estado actual de la función alert
+    const originalAlert = window.alert;
+    // Variable para verificar si alert fue llamado
+    let alertCalled = false;
+    // Sobrescribir la función alert
+    window.alert = (message) => {
+      alertCalled = true;
+      // Verificar si el mensaje es el esperado
+      expect(message).toBe('Error: Clave API no válida.');
+    };
+
+    // Ejecutar la función con una clave incorrecta (que no cumple con la longitud mínima)
+    setApiKey('shortKey'); // Por ejemplo, una clave con menos de 10 caracteres
+
+    // Verificar si alert fue llamado
+    expect(alertCalled).toBe(true);
+
+    // Restaurar la función alert original
+    window.alert = originalAlert;
+  });
 });
 
 describe('getApiKey', () => {
