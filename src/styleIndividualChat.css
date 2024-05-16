@@ -54,7 +54,6 @@
     flex-wrap: nowrap;
     justify-content: space-around;
     margin-top: -13px;
-    /* align-content: flex-start; */
     flex-direction: column;
     align-items: center;
 }

@@ -1,16 +1,7 @@
-// import { getApiKey } from './apiKey.js';
-
 
 export const communicateWithOpenAI = (messages,id, apiKey,) => {
-  //console.log('nombre por id',id);
-  //Aquí es donde debes implementar la petición con fetch o axios
-  // Obtener la clave de API
-  // apiKey = getApiKey();
-  // URL de la API de OpenAI
   const url = 'https://api.openai.com/v1/chat/completions';
   
-
-  // Cuerpo de la solicitud con el texto de entrada
   const body = {
     model: "gpt-3.5-turbo",
     messages: [
@@ -18,10 +9,9 @@ export const communicateWithOpenAI = (messages,id, apiKey,) => {
       { role:"system", content:`Responde en primera persona y forma concisa como si fueras el tiburón: ${id}`}
     ],
     temperature: 0.7,
-    max_tokens: 40 // número máximo de tokens para generar
+    max_tokens: 40 
   };
 
-  // Opciones de la solicitud
   const options = {
     method: 'POST',
     headers: {
@@ -32,7 +22,6 @@ export const communicateWithOpenAI = (messages,id, apiKey,) => {
     body: JSON.stringify(body)
   };
 
-  // Hacer la solicitud usando fetch
   return fetch(url, options)
     .then(response => {
       if (!response.ok) {
@@ -41,9 +30,9 @@ export const communicateWithOpenAI = (messages,id, apiKey,) => {
       return response.json();
     })
     .then(data => {
-      return data; // Devolver los datos de respuesta de OpenAI
+      return data;
     })
     .catch(error => {
-      throw error; // Relanzar el error para que pueda ser manejado externamente si es necesario
+      throw error; 
     });
 };

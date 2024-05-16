@@ -1,9 +1,8 @@
-/* Estilos Vista Shark */
+
 body{
     background-color: #DAD7D7;
 }
 .infoContainer{
-    /* background-color: #DAD7D7; */
     padding: 19px;
     text-align: center;
     height: 514px;
@@ -36,15 +35,9 @@ body{
     text-align: left;
     margin: 0cap;
     margin:5px 10px 10px 10px ;
-    /* margin-left: 10px;
-    margin-left: 22px;
-    margin-top: 5px;
-    margin-bottom: 2px; */
 }
 
-/* #footerShark {
-    margin-top: 55px;
-} */
+
 
 #nameShark {
     margin: 5px 0px 3px 0;
@@ -64,7 +57,6 @@ body{
 }
 
 @media (min-width : 900px) {
-    /* Estilos para Vista Shark */
     
     #homeIcon {
         fill: #007bff;

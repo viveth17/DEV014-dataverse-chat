@@ -6,7 +6,6 @@ import { communicateWithOpenAI } from "../lib/openAIApi.js";
 
 export default function IndividualChat(props) {
   const shark = filterData(data, 'id', props.id)[0];
-  //console.log('arreglo', shark.name);
   const viewEl = document.createElement('div');
   viewEl.innerHTML = `
   <link rel="stylesheet" href="styleIndividualChat.css" />
@@ -75,24 +74,18 @@ export default function IndividualChat(props) {
 </main>
   `
 
-  // evento icon Home
   const buttonHome = viewEl.querySelector("#homeIcon");
   buttonHome.addEventListener("click", () => {
     navigateTo("/");
   });
-
-  // // evento icon key
-  // Agregando la funcionalidad de la ventana emergente
   const showApiKeyDialogButton = viewEl.querySelector('#apiKeyIcon');
   const apiKeyDialog = viewEl.querySelector('#apiKeyDialog');
-  // Muestra el dialogo al hacer click en la imagen de la llave
   showApiKeyDialogButton.addEventListener('click', () => {
     if (apiKeyDialog) {
       apiKeyDialog.showModal();
     }
   });
 
-  //cerrar el dialogo al hacer click en la "X"
   const closeApiKeyDialogButton = viewEl.querySelector('#closeApiKeyDialog');
   if (closeApiKeyDialogButton) {
     closeApiKeyDialogButton.addEventListener('click', () => {
@@ -101,35 +94,29 @@ export default function IndividualChat(props) {
       }
     });
   }
-  //Guardar la API KEY al hacer click en el botón de "Guardar API KEY"
   const saveApiKeyButton = viewEl.querySelector('#saveApiKeyButton');
   if (saveApiKeyButton) {
 
     saveApiKeyButton.addEventListener('click', () => {
       const apiKeyInput = viewEl.querySelector('#apiKeyInput');
-      const apiKey = apiKeyInput.value.trim(); // Obtener y limpiar el valor de la API KEY
-      // Implementar lógica para guardar y utilizar la API KEY aquí
+      const apiKey = apiKeyInput.value.trim();
 
       setApiKey(apiKey);
-      // console.log('API KEY ingresada:', apiKey);
-      // Limpiar el input después de guardar la API KEY
       apiKeyInput.value = '';
 
-      // Cerrar el diálogo después de guardar la API KEY
       if (apiKeyDialog) {
         apiKeyDialog.close();
       }
     });
   }
 
-  // evento icon chat group
+
   const iconChatGroup = viewEl.querySelector("#iconChatG");
   iconChatGroup.addEventListener("click", () => {
     navigateTo("/groupchat");
   });
 
   
-  //evento icon "enviar"
   const buttonSend = viewEl.querySelector("#iconSends");
   const inputText = viewEl.querySelector(".message-input");
   buttonSend.addEventListener("click", () => {
@@ -172,25 +159,23 @@ export default function IndividualChat(props) {
   inputText.addEventListener("keydown", function (event) {
     if (event.key === "Enter") {
 
-      //para obtener campo de texto ingresado por el usuario
+     
       const wordsUser = viewEl.querySelector("#input-message").value;
-      // console.log('texto en el input:', wordsUser);
+   
 
-      // //Invocar funcion para comunicar con Open IA (pasando el texto ingresado por el usuario)
+      
       const apiKey = getApiKey();
       communicateWithOpenAI(wordsUser, props.id, apiKey).then(Response => {
-        //crear y mostrar las respuestas de OpenAI//
+       
         const viewChat = document.createElement('div');
-        //console.log('palabras x el usuario', wordsUser);
+        
         viewChat.innerHTML = `
       <div class="user-response">
         <span class="wordsuser"> ${wordsUser} </span>
         </div>
     `
         viewEl.querySelector(".response-container").appendChild(viewChat);
-        // viewEl.appendChild(viewChat);
-        //console.log("responOpenia", Response.choices[0].message.content);
-        // obtener la respuesta de openAI
+        
         const viewChatOpenIa = document.createElement('div');
         viewChatOpenIa.innerHTML = `
     <div class="ai-response">
@@ -201,7 +186,7 @@ export default function IndividualChat(props) {
   `
         viewEl.querySelector(".response-container").appendChild(viewChatOpenIa);
 
-        // Limpiar el contenido del input despues de enviar
+        
         const inputMessage = viewEl.querySelector("#input-message");
         inputMessage.value = "";
 

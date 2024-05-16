@@ -77,10 +77,8 @@ export default function Home()  {
 `
   viewEl.classList.add("bodySection");
   const divElement = viewEl.querySelector('#root');
-  //console.log('divElement', divElement);
   let statusData = data;
   divElement.appendChild(renderItems(statusData));
-  //console.log('data',data);
 
   const selectElement = viewEl.querySelector('#locationOfTheSpecie');
   selectElement.addEventListener('change', function () {
@@ -106,7 +104,6 @@ export default function Home()  {
     } else {
       sortedData = statusData;
     }
-    //console.log('sortedData',sortedData);
     statusData = sortedData
     divElement.replaceChildren(renderItems(statusData));
   });
@@ -127,18 +124,14 @@ export default function Home()  {
     maximumSizeSelect.value = 'Sin orden';
     viewEl.querySelector('#longevityText').innerHTML = 'Longevidad promedio:';
   })
-  // evento icon key
-  // Agregando la funcionalidad de la ventana emergente
   const showApiKeyDialogButton = viewEl.querySelector('#apiKeyIcon');
   const apiKeyDialog = viewEl.querySelector('#apiKeyDialog');
-  // Muestra el dialogo al hacer click en la imagen de la llave
   showApiKeyDialogButton.addEventListener('click', () => {
     if (apiKeyDialog) {
       apiKeyDialog.showModal();
     }
   });
 
-  //cerrar el dialogo al hacer click en la "X"
   const closeApiKeyDialogButton = viewEl.querySelector('#closeApiKeyDialog');
   if (closeApiKeyDialogButton) {
     closeApiKeyDialogButton.addEventListener('click', () => {
@@ -147,29 +140,22 @@ export default function Home()  {
       }
     });
   }
-  //Guardar la API KEY al hacer click en el botón de "Guardar API KEY"
   const saveApiKeyButton = viewEl.querySelector('#saveApiKeyButton');
   if (saveApiKeyButton) {
 
     saveApiKeyButton.addEventListener('click', () => {
       const apiKeyInput = viewEl.querySelector('#apiKeyInput');
-      const apiKey = apiKeyInput.value.trim(); // Obtener y limpiar el valor de la API KEY
-      // Implementar lógica para guardar y utilizar la API KEY aquí
+      const apiKey = apiKeyInput.value.trim(); 
 
       setApiKey(apiKey);
-      // console.log('API KEY ingresada:', apiKey);
-      // Limpiar el input después de guardar la API KEY
       apiKeyInput.value = '';
 
-      // Cerrar el diálogo después de guardar la API KEY
       if (apiKeyDialog) {
         apiKeyDialog.close();
       }
     });
   }
 
-
-  //botón Chat Grupal//
   const buttonGroupChat = viewEl.querySelector('#iconChatGroup');
   buttonGroupChat.addEventListener('click', () => navigateTo("/groupchat", { }));
   return viewEl;

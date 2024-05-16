@@ -171,7 +171,7 @@ export default function GroupChat() {
           viewEl.querySelector(".response-container").appendChild(viewChatOpenIa);
           const inputMessage = viewEl.querySelector("#input-message");
           inputMessage.value = "";
-          // Scroll hacia el último mensaje
+        
           viewEl.querySelector(".response-container").scrollTo(0, viewEl.querySelector(".response-container").scrollHeight);
         });
       });
@@ -205,23 +205,6 @@ export default function GroupChat() {
           return response.choices[0].message.content
         })
       });
-      //console.log("promiseSharks", promiseSharks)
-      // Promise.all(promiseSharks)
-      //   .then((response) => {
-      //     response.forEach(element => {
-      //       const viewChatOpenIa = document.createElement('div');
-      //       viewChatOpenIa.innerHTML = `
-      //       <div class="ai-response">
-      //       <span class="responsemessage">
-      //       ${element}
-      //       </span>
-      //     </div>
-      //     `
-      //       viewEl.querySelector(".response-container").appendChild(viewChatOpenIa);
-      //       const inputMessage = viewEl.querySelector("#input-message");
-      //       inputMessage.value = "";
-      //     });
-      //   });
 
       Promise.all(promiseSharks)
         .then((responses) => {
@@ -259,7 +242,6 @@ export default function GroupChat() {
             viewEl.querySelector(".response-container").appendChild(viewChatOpenIa);
             const inputMessage = viewEl.querySelector("#input-message");
             inputMessage.value = "";
-            // Scroll hacia el último mensaje
             viewEl.querySelector(".response-container").scrollTo(0, viewEl.querySelector(".response-container").scrollHeight);
           });
         });
