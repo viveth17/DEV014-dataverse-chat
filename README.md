@@ -17,7 +17,7 @@ Explora las aguas profundas mientras chateas con una variedad de especies de tib
 
 - JavaScript: Principal lenguaje de programación. 🚀
 - HTML y CSS: Fundamentales para la estructura y estilo de la interfaz de usuario. 🎨
-- Axios: Biblioteca para realizar peticiones HTTP de forma sencilla. 📡
+- Fetch: Biblioteca para realizar peticiones HTTP de forma sencilla. 📡
 - LocalStorage: Para almacenar la API KEY localmente de manera segura. 🔐
 - OpenAI API: Utilizada para generar respuestas en el chat mediante inteligencia artificial. 🤖
 
